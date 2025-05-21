@@ -1165,8 +1165,27 @@ footer p a:hover {
 /* Custom Gallery Page Styles */
 .gallery-grid-custom {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Default to 4 columns */
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* Mobile-first: 2 columns by default */
   gap: var(--spacing-unit);
+}
+
+/* Medium screens (e.g., tablets) - can stay 2 or go to 3 if desired */
+@media (min-width: 577px) {
+  .gallery-grid-custom {
+    /* Let's keep it 2 for a bit wider mobile and smaller tablets for consistency */
+    /* If you want 3 here, change to repeat(3, 1fr) but ensure total items (8) looks good */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Larger screens - go to 4 columns */
+@media (min-width: 993px) {
+  .gallery-grid-custom {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .gallery-thumb img {
