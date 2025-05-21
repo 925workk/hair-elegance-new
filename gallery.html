@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Hair Elegance</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;700&family=Lora&family=Cormorant+Garamond&family=Open+Sans&family=Lato&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <a href="index.html" class="logo"
+            ><img src="images/logo.png" alt="Hair Elegance Logo"
+          /></a>
+          <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="stylists.html">STYLISTS</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="careers.html">CAREERS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+          <div class="hamburger-menu">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-title-section">
+        <div class="container">
+          <h1>Our Work</h1>
+        </div>
+      </section>
+
+      <section id="custom-gallery" class="container section-padding">
+        <h2 class="text-center">Our Salon Gallery</h2>
+        <p
+          class="text-center"
+          style="
+            margin-bottom: calc(var(--spacing-unit) * 0.5);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        >
+          Step into Hair Elegance and explore a collection of our finest work
+          and the beautiful transformations we create for our clients. From
+          stunning hair color and precision cuts to elegant nail designs and
+          luscious lash extensions, see the Hair Elegance difference.
+        </p>
+        <div class="gallery-grid-custom">
+          <a href="images/gallery-1.png" class="gallery-thumb" data-index="0"
+            ><img
+              src="images/gallery-1.png"
+              alt="Gallery Image 1 - Balayage on dark hair"
+          /></a>
+          <a href="images/gallery-2.png" class="gallery-thumb" data-index="1"
+            ><img
+              src="images/gallery-2.png"
+              alt="Gallery Image 2 - Layered haircut with highlights"
+          /></a>
+          <a href="images/gallery-3.png" class="gallery-thumb" data-index="2"
+            ><img
+              src="images/gallery-3.png"
+              alt="Gallery Image 3 - Blonde hair transformation"
+          /></a>
+          <a href="images/gallery-4.png" class="gallery-thumb" data-index="3"
+            ><img
+              src="images/gallery-4.png"
+              alt="Gallery Image 4 - Curly hair transformation"
+          /></a>
+          <a href="images/gallery-5.png" class="gallery-thumb" data-index="4"
+            ><img
+              src="images/gallery-5.png"
+              alt="Gallery Image 5 - Red hair transformation"
+          /></a>
+          <a href="images/gallery-6.png" class="gallery-thumb" data-index="5"
+            ><img
+              src="images/gallery-6.png"
+              alt="Gallery Image 6 - Long hair transformation"
+          /></a>
+          <a href="images/gallery-7.png" class="gallery-thumb" data-index="6"
+            ><img
+              src="images/gallery-7.png"
+              alt="Gallery Image 7 - Pink hair transformation"
+          /></a>
+          <a href="images/gallery-8.png" class="gallery-thumb" data-index="7"
+            ><img
+              src="images/gallery-8.png"
+              alt="Gallery Image 8 - Before and after haircut"
+          /></a>
+        </div>
+        <p
+          class="text-center"
+          style="margin-top: calc(var(--spacing-unit) * 2); font-size: 1rem"
+        >
+          Click any image for a larger view. For more of our latest work, follow
+          us on Instagram
+          <a
+            href="https://www.instagram.com/hairelegance.utah"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="font-weight: bold"
+            >@hairelegance.utah</a
+          >!
+        </p>
+      </section>
+
+      <!-- Lightbox Modal Structure -->
+      <div id="lightbox-modal" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" />
+        <a class="lightbox-prev">&#10094;</a>
+        <a class="lightbox-next">&#10095;</a>
+        <div id="lightbox-caption"></div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>Hair Elegance &copy;2008</p>
+        <div class="social-media-icons">
+          <!-- <a href="https://www.instagram.com/hairelegance.utah" target="_blank"><i class="fab fa-instagram"></i></a> -->
+          <!-- Add other social media icons as needed -->
+        </div>
+        <ul class="footer-links">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="services.html">SERVICES</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <p>
+          Contact: 801-727-4247 | Instagram:
+          <a href="https://www.instagram.com/hairelegance.utah" target="_blank"
+            >@hairelegance.utah</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
