@@ -143,7 +143,7 @@ export default function Home() {
             </div>
           </FadeIn>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <FadeIn>
               <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
                 <div className="relative h-80 overflow-hidden">
@@ -204,29 +204,6 @@ export default function Home() {
                   <h3 className="text-2xl font-playfair font-bold text-dark-gray mb-3">Nails</h3>
                   <p className="font-montserrat text-text-color mb-6 leading-relaxed">Professional manicures and pedicures for beautifully polished nails that make a statement.</p>
                   <Link href="/services#nails" className="inline-flex items-center text-primary-red font-montserrat font-semibold hover:text-red-700 transition-colors duration-200">
-                    Learn More
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </FadeIn>
-            
-            <FadeIn>
-              <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
-                <div className="relative h-80 overflow-hidden">
-                  <Image src="/images/lashes.png" alt="Lashes" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 className="text-2xl font-playfair font-bold mb-2">Lashes</h3>
-                    <p className="text-sm font-montserrat">Enhance your eyes with our lash services</p>
-                  </div>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-playfair font-bold text-dark-gray mb-3">Lashes</h3>
-                  <p className="font-montserrat text-text-color mb-6 leading-relaxed">Enhance your natural beauty with our professional lash extensions and treatments.</p>
-                  <Link href="/services#lashes" className="inline-flex items-center text-primary-red font-montserrat font-semibold hover:text-red-700 transition-colors duration-200">
                     Learn More
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
