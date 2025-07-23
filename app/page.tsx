@@ -608,7 +608,7 @@ export default function Home() {
       </section>
 
       {/* Location and Hours */}
-      <section className="bg-dark-gray text-white py-24">
+      <section className="bg-soft-cream text-dark-gray py-24">
         <div className="container mx-auto px-6">
           <FadeIn>
             <div className="grid grid-cols-1 gap-16 md:grid-cols-2 items-center">
@@ -617,7 +617,7 @@ export default function Home() {
                 <p className="mt-6 text-xl font-sans opacity-90">
                   11516 So. District Main Drive Ste 200<br />South Jordan, Utah, 84095
                 </p>
-                <p className="mt-6 text-xl font-sans opacity-90">
+                <p className="mt-6 text-xl font-sans">
                   <strong className="text-primary-red">PHONE:</strong> 801-727-4247 (HAIR)
                 </p>
                 <h3 className="mt-12 text-4xl font-bold font-serif">Hours</h3>
