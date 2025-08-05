@@ -5,7 +5,7 @@ import FadeIn from './components/FadeIn';
 
 export default function Home() {
   return (
-    <main className="bg-off-white">
+    <main id="main-content" className="bg-off-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -15,6 +15,8 @@ export default function Home() {
             fill
             className="object-cover scale-105"
             priority
+            fetchPriority="high"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -77,6 +79,8 @@ export default function Home() {
                   alt="Comfortable salon reception area"
                   fill
                   className="object-cover"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </FadeIn>
@@ -147,7 +151,13 @@ export default function Home() {
             <FadeIn>
               <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
                 <div className="relative h-80 overflow-hidden">
-                  <Image src="/images/hair color.png" alt="Hair Color" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <Image 
+                    src="/images/hair color.png" 
+                    alt="Hair Color" 
+                    fill 
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h3 className="text-2xl font-playfair font-bold mb-2">Hair Color</h3>
@@ -170,7 +180,13 @@ export default function Home() {
             <FadeIn>
               <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
                 <div className="relative h-80 overflow-hidden">
-                  <Image src="/images/cuts and styling.png" alt="Cuts & Styling" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <Image 
+                    src="/images/cuts and styling.png" 
+                    alt="Cuts & Styling" 
+                    fill 
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h3 className="text-2xl font-playfair font-bold mb-2">Cuts & Styling</h3>
@@ -193,7 +209,13 @@ export default function Home() {
             <FadeIn>
               <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
                 <div className="relative h-80 overflow-hidden">
-                  <Image src="/images/nails.png" alt="Nails" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <Image 
+                    src="/images/nails.png" 
+                    alt="Nails" 
+                    fill 
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h3 className="text-2xl font-playfair font-bold mb-2">Nails</h3>
@@ -251,7 +273,8 @@ export default function Home() {
                         alt="Hanh Truong" 
                         width={320} 
                         height={320} 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     </div>
                     <div className="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-primary-red transition-colors duration-300"></div>
@@ -278,7 +301,8 @@ export default function Home() {
                         alt="Haley Claybaugh" 
                         width={320} 
                         height={320} 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     </div>
                     <div className="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-primary-red transition-colors duration-300"></div>
@@ -305,7 +329,8 @@ export default function Home() {
                         alt="Emery Nelson" 
                         width={320} 
                         height={320} 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     </div>
                     <div className="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-primary-red transition-colors duration-300"></div>
@@ -374,7 +399,8 @@ export default function Home() {
                     alt="Instagram Post 1" 
                     width={400} 
                     height={400} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -402,7 +428,8 @@ export default function Home() {
                     alt="Instagram Post 2" 
                     width={400} 
                     height={400} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -430,7 +457,8 @@ export default function Home() {
                     alt="Instagram Post 3" 
                     width={400} 
                     height={400} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -458,7 +486,8 @@ export default function Home() {
                     alt="Instagram Post 4" 
                     width={400} 
                     height={400} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -635,6 +664,8 @@ export default function Home() {
                   allowFullScreen={true}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
+                  title="Hair Elegance Salon Location - Google Maps"
+                  aria-label="Interactive map showing Hair Elegance salon location at 11516 So. District Main Drive Ste 200, South Jordan, Utah"
                 ></iframe>
               </div>
             </div>

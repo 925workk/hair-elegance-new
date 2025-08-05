@@ -4,7 +4,7 @@ import FadeIn from '../components/FadeIn';
 
 export default function ContactPage() {
   return (
-    <main className="bg-off-white">
+    <main id="main-content" className="bg-off-white">
       {/* Page Title Section */}
       <section className="bg-primary-red py-12">
         <div className="container mx-auto px-6 text-center">
@@ -104,6 +104,8 @@ export default function ContactPage() {
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
+                title="Hair Elegance Salon Location - Google Maps"
+                aria-label="Interactive map showing Hair Elegance salon location at 11516 So. District Main Drive Ste 200, South Jordan, Utah"
               ></iframe>
             </div>
           </FadeIn>

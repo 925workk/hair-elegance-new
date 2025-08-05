@@ -54,7 +54,7 @@ const stylists = [
 
 export default function StylistsPage() {
   return (
-    <main className="bg-off-white">
+    <main id="main-content" className="bg-off-white">
       {/* Page Title Section */}
       <section className="bg-primary-red py-12">
         <div className="container mx-auto px-6 text-center">

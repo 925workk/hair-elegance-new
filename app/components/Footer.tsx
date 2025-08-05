@@ -29,11 +29,25 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-serif font-semibold mb-4">Follow Us</h3>
             <div className="flex justify-center md:justify-start space-x-6">
-              <a href="https://www.facebook.com/p/Hair-Elegance-Utah-100037601265613/" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-primary-red transition-colors">
+              <a 
+                href="https://www.facebook.com/p/Hair-Elegance-Utah-100037601265613/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-2xl hover:text-primary-red transition-colors"
+                aria-label="Follow Hair Elegance on Facebook"
+              >
                 <FaFacebook />
+                <span className="sr-only">Facebook</span>
               </a>
-              <a href="https://www.instagram.com/hairelegance.utah" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-primary-red transition-colors">
+              <a 
+                href="https://www.instagram.com/hairelegance.utah" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-2xl hover:text-primary-red transition-colors"
+                aria-label="Follow Hair Elegance on Instagram"
+              >
                 <FaInstagram />
+                <span className="sr-only">Instagram</span>
               </a>
             </div>
           </div>
