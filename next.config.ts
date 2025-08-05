@@ -11,8 +11,10 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   generateEtags: false,
+  reactStrictMode: true,
   experimental: {
     // optimizeCss: true, // Disabled due to critters dependency issue
+    optimizePackageImports: ['react-icons'],
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',

@@ -47,7 +47,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Preload critical resources */}
-        <link rel="preload" href="/images/salonimage.jpg" as="image" type="image/jpeg" />
+        <link rel="preload" href="/images/salonimage.jpg" as="image" type="image/jpeg" fetchPriority="high" />
         <link rel="preload" href="/images/reception-area.png" as="image" type="image/png" />
         <link rel="preload" href="/images/hair color.png" as="image" type="image/png" />
         <link rel="preload" href="/images/cuts and styling.png" as="image" type="image/png" />
@@ -56,10 +56,14 @@ export default function RootLayout({
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="//www.google.com" />
         <link rel="dns-prefetch" href="//www.instagram.com" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://www.google.com" />
         <link rel="preconnect" href="https://www.instagram.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* Service Worker Registration */}
         <script
