@@ -46,12 +46,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Preload critical resources */}
+        {/* Preload critical resources - mobile optimized */}
         <link rel="preload" href="/images/salonimage.jpg" as="image" type="image/jpeg" fetchPriority="high" />
-        <link rel="preload" href="/images/reception-area.png" as="image" type="image/png" />
-        <link rel="preload" href="/images/hair color.png" as="image" type="image/png" />
-        <link rel="preload" href="/images/cuts and styling.png" as="image" type="image/png" />
-        <link rel="preload" href="/images/nails.png" as="image" type="image/png" />
+        
+        {/* Conditional preload for larger screens only */}
+        <link rel="preload" href="/images/reception-area.png" as="image" type="image/png" media="(min-width: 768px)" />
+        <link rel="preload" href="/images/hair color.png" as="image" type="image/png" media="(min-width: 768px)" />
+        <link rel="preload" href="/images/cuts and styling.png" as="image" type="image/png" media="(min-width: 768px)" />
+        <link rel="preload" href="/images/nails.png" as="image" type="image/png" media="(min-width: 768px)" />
         
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="//www.google.com" />
