@@ -87,17 +87,22 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Desktop performance hints */}
-        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" media="all" />
+        {/* Device-specific performance hints */}
+        <link rel="preload" href="/_next/static/css/app/critical-mobile.css" as="style" media="(max-width: 767px)" />
+        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" media="(min-width: 768px)" />
         <link rel="modulepreload" href="/_next/static/chunks/main.js" media="(min-width: 768px)" />
         
-        {/* Critical resource loading - optimized for both mobile and desktop */}
+        {/* Critical resource loading - LCP image only on mobile for faster loading */}
         <link rel="preload" href="/images/salonimage.jpg" as="image" type="image/jpeg" fetchPriority="high" />
         
-        {/* Desktop gets immediate preload, mobile gets prefetch */}
+        {/* Desktop gets immediate preload, mobile gets prefetch to avoid blocking */}
+        <link rel="prefetch" href="/images/reception-area.png" as="image" type="image/png" media="(max-width: 767px)" />
         <link rel="preload" href="/images/reception-area.png" as="image" type="image/png" media="(min-width: 768px)" />
+        <link rel="prefetch" href="/images/hair color.png" as="image" type="image/png" media="(max-width: 767px)" />
         <link rel="preload" href="/images/hair color.png" as="image" type="image/png" media="(min-width: 768px)" />
+        <link rel="prefetch" href="/images/cuts and styling.png" as="image" type="image/png" media="(max-width: 767px)" />
         <link rel="preload" href="/images/cuts and styling.png" as="image" type="image/png" media="(min-width: 768px)" />
+        <link rel="prefetch" href="/images/nails.png" as="image" type="image/png" media="(max-width: 767px)" />
         <link rel="preload" href="/images/nails.png" as="image" type="image/png" media="(min-width: 768px)" />
         
         {/* DNS prefetch for external resources */}
@@ -218,9 +223,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               window.addEventListener('load', function() {
-                // Shorter delay on desktop, longer on mobile
+                // Much longer delay on mobile to avoid blocking critical path
                 const isMobile = window.innerWidth <= 768;
-                const delay = isMobile ? 2000 : 500;
+                const delay = isMobile ? 5000 : 500;
                 
                 setTimeout(function() {
                   if ('serviceWorker' in navigator) {

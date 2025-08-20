@@ -6,13 +6,17 @@ export default function PerformanceMonitor() {
   useEffect(() => {
     // Defer performance monitoring to reduce blocking time
     const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
-    const delay = isMobile ? 3000 : 1000; // Balanced delays
+    const delay = isMobile ? 8000 : 1000; // Much longer delay on mobile
     
     const timer = setTimeout(() => {
       if (typeof window === 'undefined' || process.env.NODE_ENV !== 'development') return;
       
       // Skip monitoring on mobile in production for better performance  
-      if (isMobile && typeof window !== 'undefined' && !window.location.hostname.includes('localhost')) return;
+      if (isMobile && typeof window !== 'undefined' && !window.location.hostname.includes('localhost')) {
+        // Only log basic metrics on mobile in production
+        console.log('📱 Mobile performance monitoring skipped for better UX');
+        return;
+      }
       
       // Monitor Core Web Vitals only in development
       if ('PerformanceObserver' in window) {

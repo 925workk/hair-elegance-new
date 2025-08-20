@@ -1,14 +1,22 @@
-const CACHE_NAME = 'hair-elegance-v2';
-const urlsToCache = [
+const CACHE_NAME = 'hair-elegance-mobile-v3';
+
+// Mobile-optimized cache strategy - prioritize critical resources
+const criticalResources = [
   '/',
+  '/images/salonimage.jpg', // LCP image
+];
+
+const secondaryResources = [
   '/about',
-  '/services',
-  '/stylists', 
-  '/gallery',
+  '/services', 
   '/contact',
-  '/careers',
-  '/images/salonimage.jpg',
   '/images/reception-area.png',
+];
+
+const desktopOnlyResources = [
+  '/stylists',
+  '/gallery',
+  '/careers',
   '/images/hair color.png',
   '/images/cuts and styling.png',
   '/images/nails.png',
@@ -17,10 +25,26 @@ const urlsToCache = [
   '/images/stylist-3.png',
 ];
 
+// Detect if mobile for selective caching
+const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(urlsToCache))
+      .then((cache) => {
+        // Always cache critical resources
+        const promises = [cache.addAll(criticalResources)];
+        
+        // Add secondary resources with lower priority
+        promises.push(cache.addAll(secondaryResources));
+        
+        // Only cache desktop resources if not on mobile
+        if (!isMobileUA) {
+          promises.push(cache.addAll(desktopOnlyResources));
+        }
+        
+        return Promise.all(promises);
+      })
       .then(() => self.skipWaiting())
   );
 });
