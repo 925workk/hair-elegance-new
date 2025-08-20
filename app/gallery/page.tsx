@@ -2,6 +2,42 @@
 import React from 'react';
 import Image from 'next/image';
 import FadeIn from '../components/FadeIn';
+import StructuredData from '../components/StructuredData';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Hair Salon Gallery - Hair Elegance Salon Work Portfolio | South Jordan, Utah",
+  description: "Browse our hair salon gallery showcasing expert haircuts, hair coloring, highlights, balayage, and nail services at Hair Elegance Salon in South Jordan, Utah. See our latest work and transformations.",
+  keywords: [
+    "hair salon gallery South Jordan",
+    "Hair Elegance gallery",
+    "hair salon before after South Jordan",
+    "hair color gallery South Jordan",
+    "haircut gallery South Jordan",
+    "balayage gallery South Jordan",
+    "highlights gallery South Jordan",
+    "nail art gallery South Jordan",
+    "hair salon portfolio South Jordan",
+    "Hair Elegance work examples",
+    "hair styling gallery Utah"
+  ],
+  openGraph: {
+    title: "Hair Salon Gallery - Hair Elegance Salon Work Portfolio | South Jordan, Utah",
+    description: "Browse our hair salon gallery showcasing expert haircuts, hair coloring, highlights, balayage, and nail services at Hair Elegance Salon in South Jordan, Utah.",
+    url: 'https://haireleganceutah.com/gallery',
+    images: [
+      {
+        url: '/images/gallery1.jpg',
+        width: 800,
+        height: 600,
+        alt: 'Hair Elegance Salon gallery - hair styling work examples',
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://haireleganceutah.com/gallery',
+  },
+};
 
 const images = [
   '/images/gallery1.jpg',
@@ -76,6 +112,9 @@ export default function GalleryPage() {
           </FadeIn>
         </div>
       </section>
+
+      {/* Structured Data for Gallery Page */}
+      <StructuredData type="gallery" />
 
       {/* Gallery Grid */}
       <section className="container mx-auto px-6 py-20">

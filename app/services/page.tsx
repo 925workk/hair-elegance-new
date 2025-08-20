@@ -1,6 +1,42 @@
 
 import { FaPalette, FaCut, FaHandSparkles, FaMale } from 'react-icons/fa';
 import FadeIn from '../components/FadeIn';
+import StructuredData from '../components/StructuredData';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Hair Salon Services & Prices - Haircuts, Color & Nails | South Jordan, Utah",
+  description: "Professional hair salon services in South Jordan, Utah. Expert haircuts, hair coloring, highlights, balayage, styling, and nail services. View our complete price list and book your appointment.",
+  keywords: [
+    "hair salon services South Jordan",
+    "haircut prices South Jordan",
+    "hair color prices South Jordan",
+    "balayage South Jordan",
+    "highlights South Jordan",
+    "nail services South Jordan",
+    "Brazilian blowout South Jordan",
+    "hair styling South Jordan",
+    "manicure pedicure South Jordan",
+    "hair salon price list",
+    "Hair Elegance services"
+  ],
+  openGraph: {
+    title: "Hair Salon Services & Prices - Haircuts, Color & Nails | South Jordan, Utah",
+    description: "Professional hair salon services in South Jordan, Utah. Expert haircuts, hair coloring, highlights, balayage, styling, and nail services.",
+    url: 'https://haireleganceutah.com/services',
+    images: [
+      {
+        url: '/images/hair color.png',
+        width: 800,
+        height: 600,
+        alt: 'Hair color services at Hair Elegance Salon - South Jordan, Utah',
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://haireleganceutah.com/services',
+  },
+};
 
 export default function ServicesPage() {
   return (
@@ -17,6 +53,9 @@ export default function ServicesPage() {
           </FadeIn>
         </div>
       </section>
+
+      {/* Structured Data for Services */}
+      <StructuredData type="services" />
 
       {/* Color Services */}
       <section id="color" className="container mx-auto px-6 py-20">

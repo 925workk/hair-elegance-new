@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   generateEtags: false,
   reactStrictMode: true,
+  swcMinify: true,
   experimental: {
     // optimizeCss: true, // Disabled due to critters dependency issue
     optimizePackageImports: ['react-icons'],
@@ -21,6 +22,13 @@ const nextConfig: NextConfig = {
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Target modern browsers to reduce legacy JavaScript
+  transpilePackages: [],
+  modularizeImports: {
+    'react-icons': {
+      transform: 'react-icons/{{member}}',
+    },
   },
   headers: async () => {
     return [

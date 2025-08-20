@@ -1,6 +1,41 @@
 
 import { FaPhoneAlt, FaInstagram, FaEnvelope } from 'react-icons/fa';
 import FadeIn from '../components/FadeIn';
+import StructuredData from '../components/StructuredData';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Contact Hair Elegance Salon - Book Appointment | South Jordan, Utah",
+  description: "Contact Hair Elegance Salon in South Jordan, Utah. Call 801-727-4247 to book your appointment. Visit us at 11516 So. District Main Drive Ste 200. Open Monday-Saturday 10AM-6PM.",
+  keywords: [
+    "contact Hair Elegance",
+    "book appointment hair salon South Jordan",
+    "hair salon phone number South Jordan",
+    "Hair Elegance address",
+    "hair salon hours South Jordan",
+    "hair salon appointment South Jordan",
+    "Hair Elegance contact info",
+    "South Jordan hair salon location",
+    "hair salon District Main Drive",
+    "Hair Elegance phone number"
+  ],
+  openGraph: {
+    title: "Contact Hair Elegance Salon - Book Appointment | South Jordan, Utah",
+    description: "Contact Hair Elegance Salon in South Jordan, Utah. Call 801-727-4247 to book your appointment. Visit us at 11516 So. District Main Drive Ste 200.",
+    url: 'https://haireleganceutah.com/contact',
+    images: [
+      {
+        url: '/images/salonimage.jpg',
+        width: 800,
+        height: 600,
+        alt: 'Hair Elegance Salon contact information - South Jordan, Utah',
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://haireleganceutah.com/contact',
+  },
+};
 
 export default function ContactPage() {
   return (
@@ -13,6 +48,9 @@ export default function ContactPage() {
           </FadeIn>
         </div>
       </section>
+
+      {/* Structured Data for Contact Page */}
+      <StructuredData type="contact" />
 
       {/* Contact Info */}
       <section className="container mx-auto px-6 py-20">
