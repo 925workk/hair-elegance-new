@@ -1,6 +1,0 @@
-# Modern browsers only - reduces legacy JavaScript
-last 2 versions
-> 1%
-not dead
-not ie 11
-not ie_mob 11
