@@ -22,38 +22,16 @@ export default function MobileOptimized({
       setIsLoaded(true);
     };
 
-    // Use requestIdleCallback for better performance on mobile
-    if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(checkScreenSize, { timeout: 100 });
-    } else {
-      // Fallback for browsers without requestIdleCallback
-      setTimeout(checkScreenSize, 0);
-    }
+    // Keep it simple - avoid requestIdleCallback complexity
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
     
-    const debouncedResize = () => {
-      if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(() => {
-          setIsMobile(window.innerWidth < breakpoint);
-        }, { timeout: 100 });
-      } else {
-        setTimeout(() => {
-          setIsMobile(window.innerWidth < breakpoint);
-        }, 100);
-      }
-    };
-    
-    window.addEventListener('resize', debouncedResize, { passive: true });
-    
-    return () => window.removeEventListener('resize', debouncedResize);
+    return () => window.removeEventListener('resize', checkScreenSize);
   }, [breakpoint]);
 
-  // Show skeleton/loading state on mobile for better perceived performance
+  // Don't render anything until we know the screen size
   if (!isLoaded) {
-    return (
-      <div className="animate-pulse bg-gray-200 h-32 rounded-lg" 
-           style={{ display: 'none' }} // Hidden by default to prevent flash
-      />
-    );
+    return null;
   }
 
   // On mobile, show fallback or nothing
