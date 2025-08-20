@@ -1,5 +1,4 @@
 
-import { FaPhoneAlt, FaInstagram, FaEnvelope } from 'react-icons/fa';
 import FadeIn from '../components/FadeIn';
 
 export default function ContactPage() {
@@ -19,7 +18,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
           <FadeIn>
             <div>
-              <FaPhoneAlt className="text-4xl text-primary-red mx-auto" />
+              <svg className="text-4xl text-primary-red mx-auto" width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h2.49a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.02l-2.2 2.2z"/></svg>
               <h3 className="mt-4 text-2xl font-bold text-dark-gray font-serif">Call Us</h3>
               <p className="mt-2 text-lg text-text-color font-sans">For appointments and inquiries:</p>
               <a href="tel:8017274247" className="text-primary-red hover:underline font-sans">801-727-4247 (HAIR)</a>
@@ -27,7 +26,7 @@ export default function ContactPage() {
           </FadeIn>
           <FadeIn>
             <div>
-              <FaInstagram className="text-4xl text-primary-red mx-auto" />
+              <svg className="text-4xl text-primary-red mx-auto" width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.25a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 18 6.25z"/></svg>
               <h3 className="mt-4 text-2xl font-bold text-dark-gray font-serif">Connect With Us</h3>
               <p className="mt-2 text-lg text-text-color font-sans">Follow our latest work and updates:</p>
               <a href="https://www.instagram.com/hairelegance.utah" target="_blank" rel="noopener noreferrer" className="text-primary-red hover:underline font-sans">@hairelegance.utah</a>
@@ -35,7 +34,7 @@ export default function ContactPage() {
           </FadeIn>
           <FadeIn>
             <div>
-              <FaEnvelope className="text-4xl text-primary-red mx-auto" />
+              <svg className="text-4xl text-primary-red mx-auto" width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
               <h3 className="mt-4 text-2xl font-bold text-dark-gray font-serif">Email Us</h3>
               <p className="mt-2 text-lg text-text-color font-sans">For general questions or career inquiries:</p>
               <a href="mailto:hairelegance@hotmail.com" className="text-primary-red hover:underline font-sans">hairelegance@hotmail.com</a>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
@@ -73,6 +73,12 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#7f1d1d',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -81,32 +87,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Critical resource hints for faster loading */}
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        {/* Preconnect for font loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* Critical CSS preload - keep simple */}
-        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" media="all" />
-        <link rel="modulepreload" href="/_next/static/chunks/main.js" />
-        
-        {/* Critical resource loading - LCP image only on mobile for faster loading */}
-        <link rel="preload" href="/images/salonimage.jpg" as="image" type="image/jpeg" fetchPriority="high" />
-        
-        {/* Only preload LCP image - remove all other preloads for mobile performance */}
-        
-        {/* DNS prefetch for external resources */}
+
+        {/* Next/Image handles LCP image prioritization; avoid manual preload to prevent duplicate downloads */}
+
+        {/* DNS prefetch for external resources used on the page */}
         <link rel="dns-prefetch" href="//www.google.com" />
         <link rel="dns-prefetch" href="//www.instagram.com" />
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-        
-        {/* Preconnect to external domains - high priority for fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.google.com" />
-        <link rel="preconnect" href="https://www.instagram.com" />
         
         {/* JSON-LD Structured Data for Local Business SEO */}
         <script
@@ -208,23 +197,10 @@ export default function RootLayout({
           }}
         />
         
-        {/* Device-optimized Service Worker */}
-        <script
-          defer
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Disable Service Worker entirely for now to avoid blocking
-              // window.addEventListener('load', function() {
-              //   if ('serviceWorker' in navigator) {
-              //     navigator.serviceWorker.register('/sw.js');
-              //   }
-              // });
-            `,
-          }}
-        />
+        {/* Service worker intentionally disabled to avoid main-thread work */}
       </head>
       <body className={`${playfairDisplay.variable} ${montserrat.variable} font-sans`}>
-        <PerformanceMonitor />
+        {process.env.NODE_ENV === 'development' ? <PerformanceMonitor /> : null}
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-red text-white px-4 py-2 rounded z-50">
           Skip to main content
         </a>

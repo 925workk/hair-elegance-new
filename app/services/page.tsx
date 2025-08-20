@@ -1,5 +1,4 @@
 
-import { FaPalette, FaCut, FaHandSparkles, FaMale } from 'react-icons/fa';
 import FadeIn from '../components/FadeIn';
 
 export default function ServicesPage() {
@@ -23,7 +22,7 @@ export default function ServicesPage() {
         <FadeIn>
           <div className="border-b border-gray-300 pb-4">
             <h2 className="text-3xl font-bold text-left text-dark-gray font-serif flex items-center">
-              <FaPalette className="mr-4 text-primary-red" /> COLOR
+              <svg className="mr-4 text-primary-red" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3a9 9 0 100 18 1.5 1.5 0 000-3h-1a2 2 0 110-4h2a3 3 0 003-3 8 8 0 00-8-8z"/></svg> COLOR
             </h2>
           </div>
         </FadeIn>
@@ -53,7 +52,7 @@ export default function ServicesPage() {
           <FadeIn>
             <div className="border-b border-gray-300 pb-4">
               <h2 className="text-3xl font-bold text-left text-dark-gray font-serif flex items-center">
-                <FaCut className="mr-4 text-primary-red" /> CUTS & STYLING
+                <svg className="mr-4 text-primary-red" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 3a3 3 0 100 6 3 3 0 000-6zm10 0a3 3 0 100 6 3 3 0 000-6zM2 20l8-8M22 20l-8-8"/></svg> CUTS & STYLING
               </h2>
             </div>
           </FadeIn>
@@ -77,7 +76,7 @@ export default function ServicesPage() {
         <FadeIn>
           <div className="border-b border-gray-300 pb-4">
             <h2 className="text-3xl font-bold text-left text-dark-gray font-serif flex items-center">
-              <FaHandSparkles className="mr-4 text-primary-red" /> NAILS
+              <svg className="mr-4 text-primary-red" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 20h14v-2a7 7 0 00-14 0v2zm7-18a3 3 0 013 3v6h-6V5a3 3 0 013-3z"/></svg> NAILS
             </h2>
           </div>
         </FadeIn>
@@ -94,7 +93,7 @@ export default function ServicesPage() {
           <FadeIn>
             <div className="border-b border-gray-300 pb-4">
               <h2 className="text-3xl font-bold text-left text-dark-gray font-serif flex items-center">
-                <FaMale className="mr-4 text-primary-red" /> MEN&apos;S SERVICES
+                <svg className="mr-4 text-primary-red" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 2h6v6h-2V5.41l-5.3 5.3a6 6 0 11-1.42-1.42l5.3-5.3V2zM8 14a4 4 0 104-4 4 4 0 00-4 4z"/></svg> MEN&apos;S SERVICES
               </h2>
             </div>
           </FadeIn>

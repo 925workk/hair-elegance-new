@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
   generateEtags: true, // Better caching
   reactStrictMode: true,
   experimental: {
-    optimizePackageImports: ['react-icons'],
+    optimizePackageImports: [],
     optimizeServerReact: true,
     // optimizeCss: true, // Disabled to prevent layout issues
   },
