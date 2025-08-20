@@ -2,14 +2,14 @@
 
 export default function CriticalCSS() {
   return (
-    <style
-      dangerouslySetInnerHTML={{
-        __html: `
-          /* Critical CSS for above-the-fold content */
-          :root {
-            --font-playfair-display: 'Playfair Display', serif;
-            --font-montserrat: 'Montserrat', sans-serif;
-          }
+            <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              /* Critical CSS for above-the-fold content - Inline to prevent render blocking */
+              :root {
+                --font-playfair-display: 'Playfair Display', serif;
+                --font-montserrat: 'Montserrat', sans-serif;
+              }
           
           * {
             box-sizing: border-box;
@@ -65,6 +65,7 @@ export default function CriticalCSS() {
           .hero-title {
             font-family: var(--font-playfair-display), serif;
             font-weight: 700;
+            font-size: 3rem;
             color: white;
             line-height: 1.1;
             margin: 0;
@@ -198,7 +199,7 @@ export default function CriticalCSS() {
             }
             
             .hero-title {
-              font-size: 3.75rem;
+              font-size: 3.75rem !important;
             }
             
             .hero-subtitle {
@@ -216,13 +217,13 @@ export default function CriticalCSS() {
             }
             
             .hero-title {
-              font-size: 4.5rem;
+              font-size: 4.5rem !important;
             }
           }
           
           @media (min-width: 1024px) {
             .hero-title {
-              font-size: 5.25rem;
+              font-size: 5.25rem !important;
             }
             
             .hero-subtitle {
@@ -232,7 +233,7 @@ export default function CriticalCSS() {
           
           @media (min-width: 1280px) {
             .hero-title {
-              font-size: 6rem;
+              font-size: 6rem !important;
             }
           }
           

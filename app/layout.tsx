@@ -11,6 +11,7 @@ const playfairDisplay = Playfair_Display({
   variable: '--font-playfair-display',
   display: 'swap',
   preload: true,
+  fallback: ['serif'],
 });
 
 const montserrat = Montserrat({
@@ -18,6 +19,7 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
   display: 'swap',
   preload: true,
+  fallback: ['sans-serif'],
 });
 
 export const metadata: Metadata = {
@@ -114,50 +116,43 @@ export default function RootLayout({
         {/* Preload critical resources - mobile optimized */}
         <link rel="preload" href="/images/salonimage.jpg" as="image" type="image/jpeg" fetchPriority="high" />
         
-        {/* Conditional preload for larger screens only */}
-        <link rel="preload" href="/images/reception-area.png" as="image" type="image/png" media="(min-width: 768px)" />
-        <link rel="preload" href="/images/hair color.png" as="image" type="image/png" media="(min-width: 768px)" />
-        <link rel="preload" href="/images/cuts and styling.png" as="image" type="image/png" media="(min-width: 768px)" />
-        <link rel="preload" href="/images/nails.png" as="image" type="image/png" media="(min-width: 768px)" />
+        {/* Preconnect to critical origins */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="//www.google.com" />
         <link rel="dns-prefetch" href="//www.instagram.com" />
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="//www.facebook.com" />
         
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://www.google.com" />
         <link rel="preconnect" href="https://www.instagram.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* Structured Data for Local Business */}
         <StructuredData type="localBusiness" />
         
-        {/* Deferred CSS Loading - Load non-critical styles after page load */}
+        {/* Preload CSS for better performance */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              // Load non-critical CSS after page load
-              function loadDeferredCSS() {
-                const link = document.createElement('link');
-                link.rel = 'stylesheet';
-                link.href = '/globals.css';
-                link.media = 'print';
-                link.onload = function() {
-                  this.media = 'all';
-                };
-                document.head.appendChild(link);
-              }
-              
-              // Load CSS after page load or immediately if already loaded
-              if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', loadDeferredCSS);
-              } else {
-                loadDeferredCSS();
-              }
-              
+              const link = document.createElement('link');
+              link.rel = 'preload';
+              link.href = '/globals.css';
+              link.as = 'style';
+              link.onload = function() {
+                this.onload = null;
+                this.rel = 'stylesheet';
+              };
+              document.head.appendChild(link);
+            `,
+          }}
+        />
+        
+        {/* Service Worker Registration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
               // Service Worker Registration
               if ('serviceWorker' in navigator) {
                 window.addEventListener('load', function() {

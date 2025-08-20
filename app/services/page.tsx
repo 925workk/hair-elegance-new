@@ -45,7 +45,7 @@ export default function ServicesPage() {
       <section className="bg-primary-red py-12">
         <div className="container mx-auto px-6 text-center">
           <FadeIn>
-            <h1 className="text-5xl font-bold text-white font-serif">SERVICES</h1>
+            <h1 className="text-5xl font-bold text-white font-serif" style={{fontSize: '3rem'}}>SERVICES</h1>
             <p className="mt-4 text-lg text-white font-sans opacity-90">
               Prices may vary based on artist experience, hair length, and
               thickness.

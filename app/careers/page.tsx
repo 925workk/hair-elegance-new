@@ -45,7 +45,7 @@ export default function CareersPage() {
       <section className="bg-primary-red py-12">
         <div className="container mx-auto px-6 text-center">
           <FadeIn>
-            <h1 className="text-5xl font-bold text-white font-serif">Join Our Team</h1>
+            <h1 className="text-5xl font-bold text-white font-serif" style={{fontSize: '3rem'}}>Join Our Team</h1>
           </FadeIn>
         </div>
       </section>

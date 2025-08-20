@@ -71,7 +71,7 @@ export default function GalleryPage() {
       <section className="bg-primary-red py-12">
         <div className="container mx-auto px-6 text-center">
           <FadeIn>
-            <h1 className="text-5xl font-bold text-white font-serif">GALLERY</h1>
+            <h1 className="text-5xl font-bold text-white font-serif" style={{fontSize: '3rem'}}>GALLERY</h1>
             <p className="mt-4 text-lg text-white font-sans opacity-90">
               A Glimpse of Our Craftsmanship and Creativity
             </p>

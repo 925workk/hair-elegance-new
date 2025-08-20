@@ -32,7 +32,7 @@ const Header = () => {
                 className="h-12 w-auto"
                 priority
                 sizes="132px"
-                quality={85}
+                quality={75}
               />
             </Link>
           </div>
