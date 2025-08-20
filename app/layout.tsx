@@ -20,20 +20,20 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Hair Elegance - Where Beauty Meets Excellence",
+  title: "Hair Elegance Salon - Premium Hair & Beauty Services in South Jordan",
   description: "A South Jordan Favorite Since 2008.",
   other: {
     'google-site-verification': 'your-verification-code',
   },
   openGraph: {
-    title: "Hair Elegance - Where Beauty Meets Excellence",
+    title: "Hair Elegance Salon - Premium Hair & Beauty Services in South Jordan",
     description: "A South Jordan Favorite Since 2008.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hair Elegance - Where Beauty Meets Excellence",
+    title: "Hair Elegance Salon - Premium Hair & Beauty Services in South Jordan",
     description: "A South Jordan Favorite Since 2008.",
   },
 };
