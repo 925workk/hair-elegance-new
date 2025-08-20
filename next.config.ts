@@ -14,7 +14,6 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   generateEtags: false,
   reactStrictMode: true,
-  swcMinify: true,
   experimental: {
     // optimizeCss: true, // Disabled due to critters dependency issue
     optimizePackageImports: ['react-icons'],

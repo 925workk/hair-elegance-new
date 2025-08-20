@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import Image from 'next/image';
 import FadeIn from '../components/FadeIn';
@@ -66,39 +65,6 @@ const images = [
 ];
 
 export default function GalleryPage() {
-  const [visibleImages, setVisibleImages] = React.useState(12);
-  const [selectedImage, setSelectedImage] = React.useState<number | null>(null);
-
-  const showMoreImages = () => {
-    setVisibleImages((prev) => Math.min(prev + 4, images.length));
-  };
-
-  const openModal = (index: number) => {
-    setSelectedImage(index);
-  };
-
-  const closeModal = () => {
-    setSelectedImage(null);
-  };
-
-  const goToPrevious = () => {
-    if (selectedImage !== null) {
-      setSelectedImage((prev) => (prev === 0 ? visibleImages - 1 : prev! - 1));
-    }
-  };
-
-  const goToNext = () => {
-    if (selectedImage !== null) {
-      setSelectedImage((prev) => (prev === visibleImages - 1 ? 0 : prev! + 1));
-    }
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Escape') closeModal();
-    if (e.key === 'ArrowLeft') goToPrevious();
-    if (e.key === 'ArrowRight') goToNext();
-  };
-
   return (
     <main id="main-content" className="bg-off-white">
       {/* Page Title Section */}
@@ -119,23 +85,21 @@ export default function GalleryPage() {
       {/* Gallery Grid */}
       <section className="container mx-auto px-6 py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {images.slice(0, visibleImages).map((src, index) => (
+          {images.map((src, index) => (
             <FadeIn key={index}>
-              <div 
-                className="relative w-full h-80 overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer"
-                onClick={() => openModal(index)}
-              >
+              <div className="relative w-full h-80 overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 group">
                 <Image
                   src={src}
-                  alt={`Gallery image ${index + 1}`}
+                  alt={`Hair Elegance Salon gallery image ${index + 1} - South Jordan, Utah`}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  quality={85}
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="bg-white bg-opacity-90 rounded-full p-2">
-                    <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                     </svg>
                   </div>
@@ -144,81 +108,28 @@ export default function GalleryPage() {
             </FadeIn>
           ))}
         </div>
-        {visibleImages < images.length && (
-          <div className="text-center mt-12">
-            <button
-              onClick={showMoreImages}
-              className="bg-primary-red text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors duration-300 shadow-lg"
-            >
-              View More
-            </button>
-          </div>
-        )}
       </section>
 
-      {/* Modal */}
-      {selectedImage !== null && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
-          onClick={closeModal}
-          onKeyDown={handleKeyDown}
-          tabIndex={0}
-        >
-          <div className="relative max-w-4xl max-h-full w-full h-full flex items-center justify-center p-4">
-            {/* Close Button */}
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
+      {/* Call to Action */}
+      <section className="bg-soft-cream py-16">
+        <div className="container mx-auto px-6 text-center">
+          <FadeIn>
+            <h2 className="text-3xl font-bold text-dark-gray font-serif mb-6">
+              Ready to Experience Our Work?
+            </h2>
+            <p className="text-lg text-text-color font-montserrat mb-8 max-w-2xl mx-auto">
+              See our gallery in person and let our expert stylists create the perfect look for you. 
+              Book your appointment today and join our satisfied clients in South Jordan.
+            </p>
+            <a 
+              href="/contact" 
+              className="inline-block px-8 py-4 bg-primary-red text-white font-semibold rounded-full hover:bg-red-700 transition-colors duration-300 shadow-lg"
             >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-
-            {/* Previous Button */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                goToPrevious();
-              }}
-              className="absolute left-4 text-white hover:text-gray-300 transition-colors z-10"
-            >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-
-            {/* Next Button */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                goToNext();
-              }}
-              className="absolute right-4 text-white hover:text-gray-300 transition-colors z-10"
-            >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-
-            {/* Image */}
-            <div className="relative w-full h-full" onClick={(e) => e.stopPropagation()}>
-              <Image
-                src={images[selectedImage]}
-                alt={`Gallery image ${selectedImage + 1}`}
-                fill
-                className="object-contain"
-                sizes="100vw"
-              />
-            </div>
-
-            {/* Image Counter */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black bg-opacity-50 px-3 py-1 rounded">
-              {selectedImage + 1} / {visibleImages}
-            </div>
-          </div>
+              Book Your Appointment
+            </a>
+          </FadeIn>
         </div>
-      )}
+      </section>
     </main>
   );
 } 
