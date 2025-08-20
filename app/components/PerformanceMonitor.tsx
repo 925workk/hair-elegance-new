@@ -4,50 +4,35 @@ import { useEffect } from 'react';
 
 export default function PerformanceMonitor() {
   useEffect(() => {
-    if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
-      // Monitor Largest Contentful Paint (LCP)
+    // Simple, non-intrusive performance monitoring
+    if (typeof window === 'undefined') return;
+    
+    // Monitor Core Web Vitals
+    if ('PerformanceObserver' in window) {
+      // Monitor LCP (Largest Contentful Paint)
       const lcpObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries();
         const lastEntry = entries[entries.length - 1];
-        if (lastEntry) {
-          console.log('LCP:', lastEntry.startTime);
-          // Send to analytics if needed
+        if (lastEntry && process.env.NODE_ENV === 'development') {
+          console.log(`🎯 LCP: ${Math.round(lastEntry.startTime)}ms`);
         }
       });
       lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
 
-      // Monitor First Input Delay (FID)
-      const fidObserver = new PerformanceObserver((list) => {
+      // Monitor FCP (First Contentful Paint)  
+      const fcpObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries();
         entries.forEach((entry) => {
-          const fidEntry = entry as PerformanceEntry & { processingStart?: number };
-          if (fidEntry.processingStart && fidEntry.startTime) {
-            console.log('FID:', fidEntry.processingStart - fidEntry.startTime);
-            // Send to analytics if needed
+          if (entry.entryType === 'first-contentful-paint' && process.env.NODE_ENV === 'development') {
+            console.log(`🎨 FCP: ${Math.round(entry.startTime)}ms`);
           }
         });
       });
-      fidObserver.observe({ entryTypes: ['first-input'] });
-
-      // Monitor Cumulative Layout Shift (CLS)
-      const clsObserver = new PerformanceObserver((list) => {
-        let clsValue = 0;
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          const clsEntry = entry as PerformanceEntry & { hadRecentInput?: boolean; value?: number };
-          if (!clsEntry.hadRecentInput && clsEntry.value) {
-            clsValue += clsEntry.value;
-          }
-        });
-        console.log('CLS:', clsValue);
-        // Send to analytics if needed
-      });
-      clsObserver.observe({ entryTypes: ['layout-shift'] });
-
+      fcpObserver.observe({ entryTypes: ['first-contentful-paint'] });
+      
       return () => {
         lcpObserver.disconnect();
-        fidObserver.disconnect();
-        clsObserver.disconnect();
+        fcpObserver.disconnect();
       };
     }
   }, []);

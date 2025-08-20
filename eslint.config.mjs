@@ -14,6 +14,7 @@ const eslintConfig = [
   {
     rules: {
       "react/no-unescaped-entities": "off",
+      "@next/next/no-css-tags": "off", // Disabled for critical CSS inlining
     },
   },
 ];

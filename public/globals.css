@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Non-critical CSS for below-the-fold content */
+@layer base {
+  /* Additional base styles */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Additional accessibility styles */
+  .focus-visible {
+    outline: 2px solid #b71c1c;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Additional component styles */
+  .card {
+    @apply bg-white rounded-lg shadow-lg p-6;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent border-2 border-primary-red text-primary-red font-semibold rounded-full hover:bg-primary-red hover:text-white transition-all duration-300;
+  }
+  
+  /* Additional animations */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Additional hover effects */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@layer utilities {
+  /* Additional utility classes */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .backdrop-blur {
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Additional responsive utilities */
+  .container-sm {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .container-lg {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .container-xl {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+}
+
+/* Additional responsive styles */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-title {
+    font-size: 5rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Additional print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+} 

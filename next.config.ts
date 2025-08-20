@@ -15,9 +15,9 @@ const nextConfig: NextConfig = {
   generateEtags: false,
   reactStrictMode: true,
   experimental: {
-    // optimizeCss: true, // Disabled due to critters dependency issue
     optimizePackageImports: ['react-icons'],
     optimizeServerReact: true,
+    // optimizeCss: true, // Disabled to prevent layout issues
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -60,6 +60,19 @@ const nextConfig: NextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/globals.css',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'Content-Type',
+            value: 'text/css',
           },
         ],
       },

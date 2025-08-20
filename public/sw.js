@@ -1,6 +1,12 @@
-const CACHE_NAME = 'hair-elegance-v1';
+const CACHE_NAME = 'hair-elegance-v2';
 const urlsToCache = [
   '/',
+  '/about',
+  '/services',
+  '/stylists', 
+  '/gallery',
+  '/contact',
+  '/careers',
   '/images/salonimage.jpg',
   '/images/reception-area.png',
   '/images/hair color.png',
@@ -15,6 +21,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => cache.addAll(urlsToCache))
+      .then(() => self.skipWaiting())
   );
 });
 
@@ -38,6 +45,6 @@ self.addEventListener('activate', (event) => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim())
   );
 }); 
