@@ -4,37 +4,46 @@ import { useEffect } from 'react';
 
 export default function PerformanceMonitor() {
   useEffect(() => {
-    // Simple, non-intrusive performance monitoring
-    if (typeof window === 'undefined') return;
-    
-    // Monitor Core Web Vitals
-    if ('PerformanceObserver' in window) {
-      // Monitor LCP (Largest Contentful Paint)
-      const lcpObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const lastEntry = entries[entries.length - 1];
-        if (lastEntry && process.env.NODE_ENV === 'development') {
-          console.log(`🎯 LCP: ${Math.round(lastEntry.startTime)}ms`);
-        }
-      });
-      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-
-      // Monitor FCP (First Contentful Paint)  
-      const fcpObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          if (entry.entryType === 'first-contentful-paint' && process.env.NODE_ENV === 'development') {
-            console.log(`🎨 FCP: ${Math.round(entry.startTime)}ms`);
-          }
-        });
-      });
-      fcpObserver.observe({ entryTypes: ['first-contentful-paint'] });
+    // Defer performance monitoring to reduce blocking time
+    const timer = setTimeout(() => {
+      if (typeof window === 'undefined' || process.env.NODE_ENV !== 'development') return;
       
-      return () => {
-        lcpObserver.disconnect();
-        fcpObserver.disconnect();
-      };
-    }
+      // Monitor Core Web Vitals only in development
+      if ('PerformanceObserver' in window) {
+        try {
+          // Monitor LCP (Largest Contentful Paint)
+          const lcpObserver = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            const lastEntry = entries[entries.length - 1];
+            if (lastEntry) {
+              console.log(`🎯 LCP: ${Math.round(lastEntry.startTime)}ms`);
+            }
+          });
+          lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+
+          // Monitor FCP (First Contentful Paint)  
+          const fcpObserver = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            entries.forEach((entry) => {
+              if (entry.entryType === 'first-contentful-paint') {
+                console.log(`🎨 FCP: ${Math.round(entry.startTime)}ms`);
+              }
+            });
+          });
+          fcpObserver.observe({ entryTypes: ['first-contentful-paint'] });
+          
+          // Cleanup after 10 seconds to free memory
+          setTimeout(() => {
+            lcpObserver.disconnect();
+            fcpObserver.disconnect();
+          }, 10000);
+        } catch {
+          // Silently fail if Performance Observer not supported
+        }
+      }
+    }, 2000); // Delay monitoring to reduce initial blocking
+    
+    return () => clearTimeout(timer);
   }, []);
 
   return null;

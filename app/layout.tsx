@@ -87,6 +87,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
+        {/* Reduce unused CSS with media queries */}
+        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" media="all" />
+        
         {/* Preload critical resources - mobile optimized */}
         <link rel="preload" href="/images/salonimage.jpg" as="image" type="image/jpeg" fetchPriority="high" />
         
@@ -208,21 +211,24 @@ export default function RootLayout({
           }}
         />
         
-        {/* Service Worker Registration */}
+        {/* Deferred Service Worker Registration - Reduces blocking time */}
         <script
+          defer
           dangerouslySetInnerHTML={{
             __html: `
-              if ('serviceWorker' in navigator) {
-                window.addEventListener('load', function() {
-                  navigator.serviceWorker.register('/sw.js')
-                    .then(function(registration) {
-                      console.log('SW registered: ', registration);
-                    })
-                    .catch(function(registrationError) {
-                      console.log('SW registration failed: ', registrationError);
-                    });
-                });
-              }
+              window.addEventListener('load', function() {
+                setTimeout(function() {
+                  if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('/sw.js')
+                      .then(function(registration) {
+                        console.log('SW registered: ', registration);
+                      })
+                      .catch(function(registrationError) {
+                        console.log('SW registration failed: ', registrationError);
+                      });
+                  }
+                }, 1000);
+              });
             `,
           }}
         />
