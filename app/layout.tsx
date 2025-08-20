@@ -81,6 +81,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Critical resource hints for faster loading */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
         {/* Preload critical resources - mobile optimized */}
         <link rel="preload" href="/images/salonimage.jpg" as="image" type="image/jpeg" fetchPriority="high" />
         

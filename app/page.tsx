@@ -18,6 +18,7 @@ export default function Home() {
             priority
             fetchPriority="high"
             sizes="100vw"
+            quality={85}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
