@@ -1,10 +1,11 @@
 import { MetadataRoute } from 'next'
+import { SERVICES } from './lib/services'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.haireleganceutah.com'
   const currentDate = new Date()
 
-  return [
+  const items: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: currentDate,
@@ -48,4 +49,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
   ]
+
+  // Append each service URL for better indexing
+  SERVICES.forEach((s) => {
+    items.push({
+      url: `${baseUrl}/${s.slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    })
+  })
+
+  return items
 }

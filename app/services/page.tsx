@@ -1,5 +1,7 @@
 
 import FadeIn from '../components/FadeIn';
+import Link from 'next/link';
+import { getServicesByCategory } from '../lib/services';
 
 export default function ServicesPage() {
   return (
@@ -17,7 +19,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Color Services */}
+      {/* Women's Color */}
       <section id="color" className="container mx-auto px-6 py-20">
         <FadeIn>
           <div className="border-b border-gray-300 pb-4">
@@ -27,22 +29,14 @@ export default function ServicesPage() {
           </div>
         </FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Balayage</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$195+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Women&apos;s Full Highlight</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$145+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Women&apos;s Partial Highlight</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$100+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Women&apos;s All Over Color w/Highlights</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$175+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Women&apos;s All Over Color w/Partial</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$145+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Women&apos;s All Over Color</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$110+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Women&apos;s All Over & 7 Foils</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$125+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">7 Foils w/Style</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$70+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">All Over Blonde</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$180+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Blonde Root Retouch</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$130+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Full Toner/Gloss</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$65+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Additional Fashion Color</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$65+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Root Retouch</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$78+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Root Touch Up w/Partial</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$128+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Color Remover</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$75+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Camo Color</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$40+</p></div></FadeIn>
+          {getServicesByCategory('womens-color').map((s) => (
+            <FadeIn key={s.slug}>
+              <Link href={`/${s.slug}`} className="block p-8 bg-white rounded-lg shadow-lg font-sans h-full">
+                <h4 className="font-serif text-lg font-bold text-dark-gray">{s.name}</h4>
+                {s.priceFrom && <p className="text-primary-red font-bold text-lg text-right mt-4">{s.priceFrom}</p>}
+              </Link>
+            </FadeIn>
+          ))}
         </div>
       </section>
 
@@ -57,16 +51,14 @@ export default function ServicesPage() {
             </div>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Women&apos;s Haircut & Style</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$50+</p></div></FadeIn>
-            <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Dry Cut</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$40+</p></div></FadeIn>
-            <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Kid&apos;s Cut</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$35+</p></div></FadeIn>
-            <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Shampoo & Style</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$35+</p></div></FadeIn>
-            <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Brazillian Blowout</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$265+</p></div></FadeIn>
-            <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Olaplex Treatment</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$45+</p></div></FadeIn>
-            <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Deep Conditioner</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$30+</p></div></FadeIn>
-            <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Deep Conditioner w/Style</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$45+</p></div></FadeIn>
-            <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Curls No Shampoo</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$25+</p></div></FadeIn>
-            <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Hair Extensions</h4><div className="text-right mt-4"><p className="text-text-color text-sm">Priced by consultation.</p><p className="text-primary-red font-bold text-lg">Consultation Required</p></div></div></FadeIn>
+            {getServicesByCategory('womens-haircuts-styling').map((s) => (
+              <FadeIn key={s.slug}>
+                <Link href={`/${s.slug}`} className="block p-8 bg-white rounded-lg shadow-lg font-sans h-full">
+                  <h4 className="font-serif text-lg font-bold text-dark-gray">{s.name}</h4>
+                  {s.priceFrom && <p className="text-primary-red font-bold text-lg text-right mt-4">{s.priceFrom}</p>}
+                </Link>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
@@ -81,9 +73,14 @@ export default function ServicesPage() {
           </div>
         </FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Acrylic Full Set</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$60+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Gel Manicure</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$40+</p></div></FadeIn>
-          <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Pedicure</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$45+</p></div></FadeIn>
+          {getServicesByCategory('nails').map((s) => (
+            <FadeIn key={s.slug}>
+              <Link href={`/${s.slug}`} className="block p-8 bg-white rounded-lg shadow-lg font-sans h-full">
+                <h4 className="font-serif text-lg font-bold text-dark-gray">{s.name}</h4>
+                {s.priceFrom && <p className="text-primary-red font-bold text-lg text-right mt-4">{s.priceFrom}</p>}
+              </Link>
+            </FadeIn>
+          ))}
         </div>
       </section>
 
@@ -98,10 +95,14 @@ export default function ServicesPage() {
             </div>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Men&apos;s Cut</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$31+</p></div></FadeIn>
-            <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Men&apos;s All Over Color</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$50+</p></div></FadeIn>
-            <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Men&apos;s All Blonde w/Toner</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$140+</p></div></FadeIn>
-            <FadeIn><div className="p-8 bg-white rounded-lg shadow-lg font-sans h-full flex flex-col"><h4 className="font-serif text-lg font-bold text-dark-gray flex-grow">Men&apos;s Highlight</h4><p className="text-primary-red font-bold text-lg text-right mt-4">$70+</p></div></FadeIn>
+            {getServicesByCategory('mens-haircuts-color').map((s) => (
+              <FadeIn key={s.slug}>
+                <Link href={`/${s.slug}`} className="block p-8 bg-white rounded-lg shadow-lg font-sans h-full">
+                  <h4 className="font-serif text-lg font-bold text-dark-gray">{s.name}</h4>
+                  {s.priceFrom && <p className="text-primary-red font-bold text-lg text-right mt-4">{s.priceFrom}</p>}
+                </Link>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
