@@ -87,17 +87,18 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Reduce unused CSS with media queries */}
+        {/* Desktop performance hints */}
         <link rel="preload" href="/_next/static/css/app/layout.css" as="style" media="all" />
+        <link rel="modulepreload" href="/_next/static/chunks/main.js" media="(min-width: 768px)" />
         
-        {/* Mobile-first critical resource loading */}
-        <link rel="preload" href="/images/salonimage.jpg" as="image" type="image/jpeg" fetchPriority="high" imageSrcSet="/images/salonimage.jpg?w=640 640w, /images/salonimage.jpg?w=750 750w, /images/salonimage.jpg?w=828 828w" imageSizes="100vw" />
+        {/* Critical resource loading - optimized for both mobile and desktop */}
+        <link rel="preload" href="/images/salonimage.jpg" as="image" type="image/jpeg" fetchPriority="high" />
         
-        {/* Defer non-critical images on mobile */}
-        <link rel="prefetch" href="/images/reception-area.png" as="image" type="image/png" media="(min-width: 768px)" />
-        <link rel="prefetch" href="/images/hair color.png" as="image" type="image/png" media="(min-width: 768px)" />
-        <link rel="prefetch" href="/images/cuts and styling.png" as="image" type="image/png" media="(min-width: 768px)" />
-        <link rel="prefetch" href="/images/nails.png" as="image" type="image/png" media="(min-width: 768px)" />
+        {/* Desktop gets immediate preload, mobile gets prefetch */}
+        <link rel="preload" href="/images/reception-area.png" as="image" type="image/png" media="(min-width: 768px)" />
+        <link rel="preload" href="/images/hair color.png" as="image" type="image/png" media="(min-width: 768px)" />
+        <link rel="preload" href="/images/cuts and styling.png" as="image" type="image/png" media="(min-width: 768px)" />
+        <link rel="preload" href="/images/nails.png" as="image" type="image/png" media="(min-width: 768px)" />
         
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="//www.google.com" />
@@ -211,24 +212,24 @@ export default function RootLayout({
           }}
         />
         
-        {/* Mobile-optimized Service Worker - Longer delay on mobile */}
+        {/* Device-optimized Service Worker */}
         <script
           defer
           dangerouslySetInnerHTML={{
             __html: `
               window.addEventListener('load', function() {
-                // Longer delay on mobile for better performance
+                // Shorter delay on desktop, longer on mobile
                 const isMobile = window.innerWidth <= 768;
-                const delay = isMobile ? 3000 : 1000;
+                const delay = isMobile ? 2000 : 500;
                 
                 setTimeout(function() {
                   if ('serviceWorker' in navigator) {
                     navigator.serviceWorker.register('/sw.js')
                       .then(function(registration) {
-                        if (!isMobile) console.log('SW registered: ', registration);
+                        console.log('SW registered: ', registration);
                       })
                       .catch(function(registrationError) {
-                        if (!isMobile) console.log('SW registration failed: ', registrationError);
+                        console.log('SW registration failed: ', registrationError);
                       });
                   }
                 }, delay);

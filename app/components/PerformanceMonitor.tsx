@@ -6,7 +6,7 @@ export default function PerformanceMonitor() {
   useEffect(() => {
     // Defer performance monitoring to reduce blocking time
     const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
-    const delay = isMobile ? 5000 : 2000; // Longer delay on mobile
+    const delay = isMobile ? 3000 : 1000; // Balanced delays
     
     const timer = setTimeout(() => {
       if (typeof window === 'undefined' || process.env.NODE_ENV !== 'development') return;
