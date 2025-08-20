@@ -8,51 +8,51 @@ export default function Home() {
   return (
     <main id="main-content" className="bg-off-white">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/salonimage.jpg"
             alt="Salon Interior"
             fill
-            className="hero-bg"
+            className="object-cover scale-105"
             priority
             fetchPriority="high"
             sizes="100vw"
           />
-          <div className="hero-overlay"></div>
-          <div className="hero-overlay-bottom"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
         </div>
         
-        <div className="hero-content">
+        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
           <FadeIn>
             <div className="space-y-8">
-              <h1 className="hero-title">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-playfair font-bold text-white leading-tight">
                 <span className="block">Where Beauty</span>
                 <span className="block text-soft-cream">Meets Excellence</span>
               </h1>
-              <p className="sr-only">Hair Elegance Salon - Premier hair salon in South Jordan, Utah offering expert haircuts, hair coloring, styling, and nail services since 2008.</p>
               
-              <div className="hero-divider"></div>
+              <div className="w-24 h-1 bg-primary-red mx-auto"></div>
               
-              <p className="hero-subtitle">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-montserrat text-gray-200 max-w-3xl mx-auto leading-relaxed">
                 A South Jordan Favorite Since 2008
               </p>
               
-              <p className="hero-description">
+              <p className="text-base sm:text-lg font-montserrat text-gray-300 max-w-2xl mx-auto leading-relaxed">
                 Experience the perfect blend of artistry, luxury, and personalized care in our elegant salon sanctuary.
               </p>
               
-              <div className="hero-buttons">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
                 <Link 
                   href="/contact" 
-                  className="btn-primary"
+                  className="group relative px-10 py-4 bg-primary-red text-white font-montserrat font-semibold text-lg rounded-full hover:bg-red-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   <span className="relative z-10">Book Your Appointment</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Link>
                 
                 <Link 
                   href="/services" 
-                  className="btn-secondary"
+                  className="group px-10 py-4 bg-transparent border-2 border-white text-white font-montserrat font-semibold text-lg rounded-full hover:bg-white hover:text-primary-red transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
                   Explore Our Services
                 </Link>
@@ -136,11 +136,11 @@ export default function Home() {
       </section>
 
       {/* Services Overview */}
-      <section className="bg-soft-cream py-32" aria-labelledby="services-heading">
+      <section className="bg-soft-cream py-32">
         <div className="container mx-auto px-6">
           <FadeIn>
             <div className="text-center mb-20">
-              <h2 id="services-heading" className="text-5xl lg:text-6xl font-playfair font-bold text-dark-gray mb-6">Our Signature Services</h2>
+              <h2 className="text-5xl lg:text-6xl font-playfair font-bold text-dark-gray mb-6">Our Signature Services</h2>
               <div className="w-24 h-1 bg-primary-red mx-auto mb-8"></div>
               <p className="text-xl font-montserrat text-text-color max-w-3xl mx-auto leading-relaxed">
                 Discover the artistry and expertise that define our salon. We offer a curated selection of services designed to enhance your natural beauty and boost your confidence.
@@ -150,15 +150,14 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <FadeIn>
-              <article className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
+              <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
                 <div className="relative h-80 overflow-hidden">
                   <Image 
                     src="/images/hair color.png" 
-                    alt="Professional hair coloring services at Hair Elegance Salon - South Jordan, Utah" 
+                    alt="Hair Color" 
                     fill 
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    quality={85}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -169,14 +168,14 @@ export default function Home() {
                 <div className="p-8">
                   <h3 className="text-2xl font-playfair font-bold text-dark-gray mb-3">Hair Color</h3>
                   <p className="font-montserrat text-text-color mb-6 leading-relaxed">Expert coloring services to achieve your perfect shade with premium products and techniques.</p>
-                  <Link href="/services#color" className="inline-flex items-center text-primary-red font-montserrat font-semibold hover:text-red-700 transition-colors duration-200" aria-label="Learn more about hair color services">
+                  <Link href="/services#color" className="inline-flex items-center text-primary-red font-montserrat font-semibold hover:text-red-700 transition-colors duration-200">
                     Learn More
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </Link>
                 </div>
-              </article>
+              </div>
             </FadeIn>
             
             <FadeIn>
@@ -188,7 +187,6 @@ export default function Home() {
                     fill 
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    quality={85}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -218,7 +216,6 @@ export default function Home() {
                     fill 
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    quality={85}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">

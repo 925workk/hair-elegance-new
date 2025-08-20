@@ -30,12 +30,5 @@
     "sharp": "^0.33.5",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
-  },
-  "browserslist": [
-    "last 2 versions",
-    "> 1%",
-    "not dead",
-    "not ie 11",
-    "not ie_mob 11"
-  ]
+  }
 }

@@ -3,43 +3,6 @@ import React from 'react';
 import Image from 'next/image';
 import { FaInstagram, FaPhone } from 'react-icons/fa';
 import FadeIn from '../components/FadeIn';
-import StructuredData from '../components/StructuredData';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: "Meet Our Expert Hair Stylists - Hair Elegance Salon | South Jordan, Utah",
-  description: "Meet the talented team at Hair Elegance Salon in South Jordan, Utah. Our expert stylists specialize in hair coloring, cuts, styling, and nail services. Book with Hanh, Ashley, Emery, Tori, or Haley today.",
-  keywords: [
-    "hair stylists South Jordan",
-    "Hair Elegance stylists",
-    "South Jordan hair stylists",
-    "Hanh Truong hair stylist",
-    "Ashley Privett hair stylist",
-    "Emery Nelson hair stylist",
-    "Tori Goodsell hair stylist",
-    "Haley Claybaugh nail tech",
-    "hair salon team South Jordan",
-    "expert hair stylists Utah",
-    "hair color specialist South Jordan",
-    "nail technician South Jordan"
-  ],
-  openGraph: {
-    title: "Meet Our Expert Hair Stylists - Hair Elegance Salon | South Jordan, Utah",
-    description: "Meet the talented team at Hair Elegance Salon in South Jordan, Utah. Our expert stylists specialize in hair coloring, cuts, styling, and nail services.",
-    url: 'https://haireleganceutah.com/stylists',
-    images: [
-      {
-        url: '/images/stylist-1.png',
-        width: 800,
-        height: 600,
-        alt: 'Hair Elegance Salon stylists team - South Jordan, Utah',
-      },
-    ],
-  },
-  alternates: {
-    canonical: 'https://haireleganceutah.com/stylists',
-  },
-};
 
 const stylists = [
   {
@@ -96,13 +59,10 @@ export default function StylistsPage() {
       <section className="bg-primary-red py-12">
         <div className="container mx-auto px-6 text-center">
           <FadeIn>
-            <h1 className="text-5xl font-bold text-white font-serif" style={{fontSize: '3rem'}}>MEET YOUR STYLISTS</h1>
+            <h1 className="text-5xl font-bold text-white font-serif">MEET YOUR STYLISTS</h1>
           </FadeIn>
         </div>
       </section>
-
-      {/* Structured Data for Stylists Page */}
-      <StructuredData type="stylists" />
 
       {/* Stylists Grid */}
       <section className="container mx-auto px-6 py-20">

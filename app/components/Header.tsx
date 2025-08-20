@@ -27,12 +27,10 @@ const Header = () => {
               <Image 
                 src="/images/logo.png" 
                 alt="Hair Elegance Logo" 
-                width={132} 
-                height={48} 
+                width={160} 
+                height={60} 
                 className="h-12 w-auto"
                 priority
-                sizes="132px"
-                quality={75}
               />
             </Link>
           </div>

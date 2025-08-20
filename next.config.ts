@@ -14,21 +14,13 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   generateEtags: false,
   reactStrictMode: true,
-
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
-  // Target modern browsers to reduce legacy JavaScript
-  transpilePackages: [],
   experimental: {
     // optimizeCss: true, // Disabled due to critters dependency issue
     optimizePackageImports: ['react-icons'],
     optimizeServerReact: true,
   },
-  modularizeImports: {
-    'react-icons': {
-      transform: 'react-icons/{{member}}',
-    },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
   },
   headers: async () => {
     return [
@@ -65,19 +57,6 @@ const nextConfig: NextConfig = {
       {
         source: '/(.*).(js|css)',
         headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        source: '/globals.css',
-        headers: [
-          {
-            key: 'Content-Type',
-            value: 'text/css; charset=utf-8',
-          },
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',

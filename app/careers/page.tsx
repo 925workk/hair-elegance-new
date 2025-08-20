@@ -2,41 +2,6 @@
 import React from 'react';
 import Image from 'next/image';
 import FadeIn from '../components/FadeIn';
-import StructuredData from '../components/StructuredData';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: "Careers at Hair Elegance Salon - Join Our Team | South Jordan, Utah",
-  description: "Join the Hair Elegance Salon team in South Jordan, Utah. We're hiring licensed hair stylists, nail technicians, and lash artists. Build your career in a supportive, upscale salon environment.",
-  keywords: [
-    "hair salon jobs South Jordan",
-    "hair stylist jobs Utah",
-    "nail technician jobs South Jordan",
-    "salon careers South Jordan",
-    "Hair Elegance careers",
-    "beauty salon jobs Utah",
-    "cosmetologist jobs South Jordan",
-    "lash artist jobs South Jordan",
-    "salon team positions",
-    "beauty industry careers Utah"
-  ],
-  openGraph: {
-    title: "Careers at Hair Elegance Salon - Join Our Team | South Jordan, Utah",
-    description: "Join the Hair Elegance Salon team in South Jordan, Utah. We're hiring licensed hair stylists, nail technicians, and lash artists.",
-    url: 'https://haireleganceutah.com/careers',
-    images: [
-      {
-        url: '/images/team-pic.png',
-        width: 800,
-        height: 600,
-        alt: 'Hair Elegance Salon team - career opportunities in South Jordan, Utah',
-      },
-    ],
-  },
-  alternates: {
-    canonical: 'https://haireleganceutah.com/careers',
-  },
-};
 
 export default function CareersPage() {
   return (
@@ -45,13 +10,10 @@ export default function CareersPage() {
       <section className="bg-primary-red py-12">
         <div className="container mx-auto px-6 text-center">
           <FadeIn>
-            <h1 className="text-5xl font-bold text-white font-serif" style={{fontSize: '3rem'}}>Join Our Team</h1>
+            <h1 className="text-5xl font-bold text-white font-serif">Join Our Team</h1>
           </FadeIn>
         </div>
       </section>
-
-      {/* Structured Data for Careers Page */}
-      <StructuredData type="careers" />
 
       {/* Team Introduction with Image */}
       <section className="container mx-auto px-6 py-20">

@@ -1,40 +1,5 @@
 import Image from 'next/image';
 import FadeIn from '../components/FadeIn';
-import StructuredData from '../components/StructuredData';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: "About Hair Elegance Salon - South Jordan's Premier Hair Salon Since 2008",
-  description: "Learn about Hair Elegance Salon in South Jordan, Utah. Our story of excellence in hair styling, coloring, and nail services since 2008. Meet our expert team and discover our commitment to beauty and customer satisfaction.",
-  keywords: [
-    "Hair Elegance Salon about",
-    "South Jordan hair salon history",
-    "hair salon South Jordan since 2008",
-    "Hair Elegance team",
-    "South Jordan hair stylists",
-    "hair salon expertise South Jordan",
-    "Hair Elegance mission",
-    "South Jordan beauty salon",
-    "hair salon customer service South Jordan",
-    "Hair Elegance story"
-  ],
-  openGraph: {
-    title: "About Hair Elegance Salon - South Jordan's Premier Hair Salon Since 2008",
-    description: "Learn about Hair Elegance Salon in South Jordan, Utah. Our story of excellence in hair styling, coloring, and nail services since 2008.",
-    url: 'https://haireleganceutah.com/about',
-    images: [
-      {
-        url: '/images/team-pic.png',
-        width: 800,
-        height: 600,
-        alt: 'Hair Elegance Salon team - South Jordan, Utah',
-      },
-    ],
-  },
-  alternates: {
-    canonical: 'https://haireleganceutah.com/about',
-  },
-};
 
 export default function AboutPage() {
   return (
@@ -43,13 +8,10 @@ export default function AboutPage() {
       <section className="bg-primary-red py-12">
         <div className="container mx-auto px-6 text-center">
           <FadeIn>
-            <h1 className="text-5xl font-bold text-white font-serif" style={{fontSize: '3rem'}}>About Hair Elegance</h1>
+            <h1 className="text-5xl font-bold text-white font-serif">About Hair Elegance</h1>
           </FadeIn>
         </div>
       </section>
-
-      {/* Structured Data for About Page */}
-      <StructuredData type="about" />
 
       {/* Mission Statement */}
       <section className="container mx-auto px-6 py-20">
@@ -122,57 +84,25 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-8 mt-12 md:grid-cols-2 lg:grid-cols-4">
             <FadeIn>
               <div className="text-center">
-                <Image 
-                  src="/images/reception-area.png" 
-                  alt="Reception Area" 
-                  width={300} 
-                  height={200} 
-                  className="mx-auto rounded-lg"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  quality={85}
-                />
+                <Image src="/images/reception-area.png" alt="Reception Area" width={300} height={200} className="mx-auto rounded-lg" />
                 <p className="mt-4 text-xl font-semibold text-dark-gray font-sans">Reception Area</p>
               </div>
             </FadeIn>
             <FadeIn>
               <div className="text-center">
-                <Image 
-                  src="/images/styling-stations.jpg" 
-                  alt="Styling Stations" 
-                  width={300} 
-                  height={200} 
-                  className="mx-auto rounded-lg"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  quality={85}
-                />
+                <Image src="/images/styling-stations.jpg" alt="Styling Stations" width={300} height={200} className="mx-auto rounded-lg" />
                 <p className="mt-4 text-xl font-semibold text-dark-gray font-sans">Styling Stations</p>
               </div>
             </FadeIn>
             <FadeIn>
               <div className="text-center">
-                <Image 
-                  src="/images/nail-bar.png" 
-                  alt="Nail Bar" 
-                  width={300} 
-                  height={200} 
-                  className="mx-auto rounded-lg"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  quality={85}
-                />
+                <Image src="/images/nail-bar.png" alt="Nail Bar" width={300} height={200} className="mx-auto rounded-lg" />
                 <p className="mt-4 text-xl font-semibold text-dark-gray font-sans">Nail Bar</p>
               </div>
             </FadeIn>
             <FadeIn>
               <div className="text-center">
-                <Image 
-                  src="/images/relaxation-center.png" 
-                  alt="Relaxation Corner" 
-                  width={300} 
-                  height={200} 
-                  className="mx-auto rounded-lg"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  quality={85}
-                />
+                <Image src="/images/relaxation-center.png" alt="Relaxation Corner" width={300} height={200} className="mx-auto rounded-lg" />
                 <p className="mt-4 text-xl font-semibold text-dark-gray font-sans">Relaxation Corner</p>
               </div>
             </FadeIn>
