@@ -35,7 +35,7 @@ export const SERVICES: SalonService[] = [
   { name: 'Balayage', slug: makeSlug('balayage'), category: 'womens-color', priceFrom: '$195+' },
   { name: 'Full Highlights', slug: makeSlug('full highlights'), category: 'womens-color', priceFrom: '$145+' },
   { name: 'Partial Highlights', slug: makeSlug('partial highlights'), category: 'womens-color', priceFrom: '$100+' },
-  { name: 'All Over Hair Color with Highlights', slug: makeSlug('all over hair color with highlights'), category: 'womens-color', priceFrom: '$175+' },
+  { name: 'All Over Hair Color with Highlights', slug: makeSlug('all over hair color with highlights'), category: 'womens-color', priceFrom: '$195+' },
   { name: 'All Over Hair Color with Partial Highlights', slug: makeSlug('all over hair color with partial highlights'), category: 'womens-color', priceFrom: '$145+' },
   { name: 'All Over Hair Color', slug: makeSlug('all over hair color'), category: 'womens-color', priceFrom: '$110+' },
   { name: 'All Over Hair Color with 7 Foils', slug: makeSlug('all over hair color with 7 foils'), category: 'womens-color', priceFrom: '$125+' },
@@ -43,7 +43,6 @@ export const SERVICES: SalonService[] = [
   { name: 'All Over Blonde Hair', slug: makeSlug('all over blonde hair'), category: 'womens-color', priceFrom: '$180+' },
   { name: 'Blonde Root Touch Up', slug: makeSlug('blonde root touch up'), category: 'womens-color', priceFrom: '$130+' },
   { name: 'Toner and Gloss', slug: makeSlug('toner and gloss'), category: 'womens-color', priceFrom: '$65+' },
-  { name: 'Vivid/Fashion Color', slug: makeSlug('vivid fashion color'), category: 'womens-color', priceFrom: '$65+' },
   { name: 'Root Touch Up', slug: makeSlug('root touch up'), category: 'womens-color', priceFrom: '$78+' },
   { name: 'Root Touch Up with Partial Highlights', slug: makeSlug('root touch up with partial highlights'), category: 'womens-color', priceFrom: '$128+' },
   { name: 'Color Remover', slug: makeSlug('color remover'), category: 'womens-color', priceFrom: '$75+' },
@@ -302,13 +301,7 @@ export function getCopyForService(service: SalonService): ServiceCopy {
         { heading: 'Timing', content: 'Best maintained every 4–6 weeks to avoid banding and to keep lift even.' },
       ],
     },
-    'Vivid/Fashion Color': {
-      intro: 'Adds a vivid or pastel tone—think copper, ruby, rose, or lavender—either all over or as accents.',
-      sections: [
-        { heading: 'What it is', content: 'Direct or demi‑permanent fashion pigments layered over pre‑lightened hair for bright payoff.' },
-        { heading: 'Care', content: 'Use cool water and color‑safe products; expect more frequent glosses to maintain vibrancy.' },
-      ],
-    },
+
     'All Over Hair Color with Highlights': {
       intro: 'Combines a solid base shade with highlights for brightness and dimension.',
       sections: [

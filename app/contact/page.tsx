@@ -29,7 +29,7 @@ export default function ContactPage() {
               <svg className="text-4xl text-primary-red mx-auto" width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.25a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 18 6.25z"/></svg>
               <h3 className="mt-4 text-2xl font-bold text-dark-gray font-serif">Connect With Us</h3>
               <p className="mt-2 text-lg text-text-color font-sans">Follow our latest work and updates:</p>
-              <a href="https://www.instagram.com/hairelegance.utah" target="_blank" rel="noopener noreferrer" className="text-primary-red hover:underline font-sans">@hairelegance.utah</a>
+              <a href="https://www.instagram.com/hairbosshanh" target="_blank" rel="noopener noreferrer" className="text-primary-red hover:underline font-sans">@hairbosshanh</a>
             </div>
           </FadeIn>
           <FadeIn>

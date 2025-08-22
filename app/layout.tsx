@@ -135,7 +135,7 @@ export default function RootLayout({
                 "https://www.haireleganceutah.com/images/reception-area.png"
               ],
               "sameAs": [
-                "https://www.instagram.com/hairelegance.utah"
+                "https://www.instagram.com/hairbosshanh"
               ],
               "founder": {
                 "@type": "Person",

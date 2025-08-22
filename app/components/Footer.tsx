@@ -8,7 +8,7 @@ const Footer = () => {
           {/* About Section */}
           <div>
             <h3 className="text-2xl font-serif font-bold mb-4">Hair Elegance</h3>
-            <p className="text-light-gray">
+            <p className="text-soft-cream leading-relaxed">
               A South Jordan favorite since 2008, offering a blend of artistry, luxury, and personalized care.
             </p>
           </div>
@@ -41,7 +41,7 @@ const Footer = () => {
                 <span className="sr-only">Facebook</span>
               </a>
               <a 
-                href="https://www.instagram.com/hairelegance.utah" 
+                href="https://www.instagram.com/hairbosshanh" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-2xl hover:text-primary-red transition-colors"
