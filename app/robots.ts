@@ -13,6 +13,8 @@ export default function robots(): MetadataRoute.Robots {
           '/admin/',
           '/_next/',
           '/private/',
+          '/cgi-bin/',
+          '/*.html',
         ],
       },
       {
@@ -22,6 +24,8 @@ export default function robots(): MetadataRoute.Robots {
           '/api/',
           '/admin/',
           '/private/',
+          '/cgi-bin/',
+          '/*.html',
         ],
       },
       {
@@ -31,6 +35,8 @@ export default function robots(): MetadataRoute.Robots {
           '/api/',
           '/admin/',
           '/private/',
+          '/cgi-bin/',
+          '/*.html',
         ],
       },
     ],

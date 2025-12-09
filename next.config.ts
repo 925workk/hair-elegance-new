@@ -22,6 +22,58 @@ const nextConfig: NextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  async redirects() {
+    return [
+      // Redirect .html URLs to clean URLs
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/about.html',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/careers.html',
+        destination: '/careers',
+        permanent: true,
+      },
+      {
+        source: '/services.html',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/gallery.html',
+        destination: '/gallery',
+        permanent: true,
+      },
+      {
+        source: '/contact.html',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/stylists.html',
+        destination: '/stylists',
+        permanent: true,
+      },
+      // Redirect cgi-bin to home (or you could use a 404 page)
+      {
+        source: '/cgi-bin/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      // Catch any other .html files and redirect to their clean URL equivalent
+      {
+        source: '/:path*.html',
+        destination: '/:path*',
+        permanent: true,
+      },
+    ];
+  },
   headers: async () => {
     return [
       {
