@@ -173,3 +173,4 @@ Check weekly for 4 weeks:
 - [ ] Submit sitemap to Google Search Console
 - [ ] Mark issues as fixed in Search Console
 - [ ] Wait 48 hours and recheck Search Console
+

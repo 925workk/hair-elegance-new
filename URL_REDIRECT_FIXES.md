@@ -182,3 +182,4 @@ As a bonus, these changes also improve security:
 4. **Monitor Google Search Console**
 
 For detailed Vercel configuration, see: `VERCEL_DOMAIN_SETUP.md`
+

@@ -132,3 +132,4 @@ echo "✅ Redirect tests complete!"
 echo ""
 echo "Note: Some tests may fail if not yet deployed to production."
 echo "Run this script again after deployment to verify."
+

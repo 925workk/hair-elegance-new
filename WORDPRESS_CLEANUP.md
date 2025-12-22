@@ -202,3 +202,4 @@ Track these in Google Search Console:
 
 For deployment instructions, see: `URL_REDIRECT_FIXES.md`  
 For Vercel setup, see: `VERCEL_DOMAIN_SETUP.md`
+
