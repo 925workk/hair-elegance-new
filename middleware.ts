@@ -6,7 +6,7 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
 
   // Handle ALL WordPress query parameters (old site URLs)
-  // This catches ?page_id=*, ?p=*, ?cat=*, ?m=*, etc.
+  // Redirect to clean URLs so Google knows where pages moved
   const hasWordPressParams = url.searchParams.has('page_id') || 
                              url.searchParams.has('p') || 
                              url.searchParams.has('cat') || 
@@ -28,7 +28,7 @@ export function middleware(request: NextRequest) {
       '17': '/careers',   // Careers page
       '7': '/services',   // Services
       '9': '/gallery',    // Gallery
-      '11': '/contact',   // Contact (if this was your contact page)
+      '11': '/contact',   // Contact
       '14': '/',          // Unknown page - redirect to home
     };
 
