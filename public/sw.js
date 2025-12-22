@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hair-elegance-v4';
+const CACHE_NAME = 'hair-elegance-v5';
 const urlsToCache = [
   '/',
   '/images/salonimage.jpg', // Only cache the LCP image
