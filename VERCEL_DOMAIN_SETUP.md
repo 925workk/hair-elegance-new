@@ -174,3 +174,4 @@ Check weekly for 4 weeks:
 - [ ] Mark issues as fixed in Search Console
 - [ ] Wait 48 hours and recheck Search Console
 
+
