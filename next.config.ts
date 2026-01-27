@@ -107,15 +107,6 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: '/(.*).(js|css)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
         source: '/_next/static/(.*)',
         headers: [
           {
@@ -130,19 +121,6 @@ const nextConfig: NextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        source: '/globals.css',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-          {
-            key: 'Content-Type',
-            value: 'text/css',
           },
         ],
       },

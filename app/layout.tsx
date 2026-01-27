@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PerformanceMonitor from "./components/PerformanceMonitor";
+import ServiceWorkerReset from "./components/ServiceWorkerReset";
 import { Analytics } from "@vercel/analytics/next";
 
 const playfairDisplay = Playfair_Display({
@@ -201,6 +202,7 @@ export default function RootLayout({
         {/* Service worker intentionally disabled to avoid main-thread work */}
       </head>
       <body className={`${playfairDisplay.variable} ${montserrat.variable} font-sans`}>
+        <ServiceWorkerReset />
         {process.env.NODE_ENV === 'development' ? <PerformanceMonitor /> : null}
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-red text-white px-4 py-2 rounded z-50">
           Skip to main content
