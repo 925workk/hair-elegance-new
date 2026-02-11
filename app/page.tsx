@@ -427,7 +427,7 @@ export default function Home() {
                 >
                   <div className="aspect-square">
                     <Image 
-                      src="/images/insta-feature-1.png?v=2" 
+                      src="/images/insta-feature-1.png" 
                       alt="Instagram Post 1" 
                       width={400} 
                       height={400} 
@@ -456,7 +456,7 @@ export default function Home() {
               >
                 <div className="aspect-square">
                   <Image 
-                    src="/images/insta-feature-2.png?v=2" 
+                    src="/images/insta-feature-2.png" 
                     alt="Instagram Post 2" 
                     width={400} 
                     height={400} 
@@ -485,7 +485,7 @@ export default function Home() {
             >
                 <div className="aspect-square">
                   <Image 
-                    src="/images/insta-feature-3.png?v=2" 
+                    src="/images/insta-feature-3.png" 
                     alt="Instagram Post 3" 
                     width={400} 
                     height={400} 
@@ -514,7 +514,7 @@ export default function Home() {
             >
                 <div className="aspect-square">
                   <Image 
-                    src="/images/insta-feature-4.png?v=2" 
+                    src="/images/insta-feature-4.png" 
                     alt="Instagram Post 4" 
                     width={400} 
                     height={400} 

@@ -102,7 +102,7 @@ export default function AboutPage() {
             </FadeIn>
             <FadeIn>
               <div className="text-center">
-                <Image src="/images/relaxation-center.png" alt="Relaxation Corner" width={300} height={200} className="mx-auto rounded-lg" />
+                <Image src="/images/relaxation.png" alt="Relaxation Corner" width={300} height={200} className="mx-auto rounded-lg" />
                 <p className="mt-4 text-xl font-semibold text-dark-gray font-sans">Relaxation Corner</p>
               </div>
             </FadeIn>

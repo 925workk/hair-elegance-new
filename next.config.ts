@@ -72,6 +72,42 @@ const nextConfig: NextConfig = {
         destination: '/:path*',
         permanent: true,
       },
+      // Redirect old WordPress paths to homepage
+      {
+        source: '/wp-login.php',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-admin/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-content/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-includes/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/xmlrpc.php',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-cron.php',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-json/:path*',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
   headers: async () => {
