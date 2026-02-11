@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import PerformanceMonitor from "./components/PerformanceMonitor";
 import ServiceWorkerReset from "./components/ServiceWorkerReset";
 import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
@@ -89,6 +90,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google tag (gtag.js) */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-17372829274" strategy="afterInteractive" />
+        <Script id="google-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17372829274');
+          `}
+        </Script>
         {/* Preconnect for font loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
