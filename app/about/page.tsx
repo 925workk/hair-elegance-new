@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import FadeIn from '../components/FadeIn';
 
 export default function AboutPage() {
@@ -75,40 +74,6 @@ export default function AboutPage() {
         </FadeIn>
       </section>
 
-      {/* Salon Interior */}
-      <section className="bg-soft-cream">
-        <div className="container mx-auto px-6 py-20">
-          <FadeIn>
-            <h2 className="text-4xl font-bold text-left text-dark-gray font-serif">Experience Our Elegant Salon</h2>
-          </FadeIn>
-          <div className="grid grid-cols-1 gap-8 mt-12 md:grid-cols-2 lg:grid-cols-4">
-            <FadeIn>
-              <div className="text-center">
-                <Image src="/images/reception-area.png" alt="Reception Area" width={300} height={200} className="mx-auto rounded-lg" />
-                <p className="mt-4 text-xl font-semibold text-dark-gray font-sans">Reception Area</p>
-              </div>
-            </FadeIn>
-            <FadeIn>
-              <div className="text-center">
-                <Image src="/images/styling-stations.jpg" alt="Styling Stations" width={300} height={200} className="mx-auto rounded-lg" />
-                <p className="mt-4 text-xl font-semibold text-dark-gray font-sans">Styling Stations</p>
-              </div>
-            </FadeIn>
-            <FadeIn>
-              <div className="text-center">
-                <Image src="/images/nail-bar.png" alt="Nail Bar" width={300} height={200} className="mx-auto rounded-lg" />
-                <p className="mt-4 text-xl font-semibold text-dark-gray font-sans">Nail Bar</p>
-              </div>
-            </FadeIn>
-            <FadeIn>
-              <div className="text-center">
-                <Image src="/images/relaxation.png" alt="Relaxation Corner" width={300} height={200} className="mx-auto rounded-lg" />
-                <p className="mt-4 text-xl font-semibold text-dark-gray font-sans">Relaxation Corner</p>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
     </main>
   );
 } 
