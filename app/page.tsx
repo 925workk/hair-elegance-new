@@ -2,8 +2,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import FadeIn from './components/FadeIn';
-import MobileOptimized from './components/MobileOptimized';
-
 export default function Home() {
   return (
     <main id="main-content" className="bg-off-white">
@@ -400,24 +398,7 @@ export default function Home() {
             </div>
           </FadeIn>
           
-          <MobileOptimized
-            mobileFallback={
-              <div className="text-center py-8">
-                <p className="text-lg font-montserrat text-text-color">
-                  Follow us on Instagram for the latest updates and behind-the-scenes content!
-                </p>
-                <a 
-                  href="https://www.instagram.com/hairelegance.utah/" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="inline-block mt-4 px-6 py-3 bg-primary-red text-white font-montserrat font-semibold rounded-full hover:bg-red-700 transition-colors"
-                >
-                  View Instagram Feed
-                </a>
-              </div>
-            }
-          >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
               <FadeIn>
                 <a 
                   href="https://www.instagram.com/p/DNgX730yei_/" 
@@ -534,7 +515,6 @@ export default function Home() {
               </a>
             </FadeIn>
           </div>
-        </MobileOptimized>
           
           <FadeIn>
             <div className="text-center mt-20">
