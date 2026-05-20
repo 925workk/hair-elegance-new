@@ -49,6 +49,14 @@ const stylists = [
     instagramLink: 'https://www.instagram.com/hayleyc.nails',
     phone: '801-674-6042',
   },
+  {
+    name: 'Shelby Gregorio',
+    title: 'Stylist',
+    image: '/images/stylist-6.png',
+    bio: "Hi, I'm Shelby Gregorio. I've been in the beauty industry since 2011. I specialize in personalized cuts, color, and styling. When I'm not behind the chair, I'm at home with my husband and our three amazing boys. I hope to see you in my chair soon!",
+    instagram: 'shel.nic.does.hair',
+    instagramLink: 'https://www.instagram.com/shel.nic.does.hair',
+  },
 ];
 
 export default function StylistsPage() {
@@ -82,16 +90,22 @@ export default function StylistsPage() {
                 <h3 className="text-3xl font-bold text-primary-red font-serif">{stylist.name}</h3>
                 <p className="text-lg text-dark-gray font-sans italic mt-2">{stylist.title}</p>
                 <p className="text-text-color font-sans mt-6 leading-relaxed flex-grow">{stylist.bio}</p>
+                {('instagramLink' in stylist || 'phone' in stylist) && (
                 <div className="mt-8">
+                  {'instagramLink' in stylist && stylist.instagramLink && (
                   <a href={stylist.instagramLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-dark-gray hover:text-primary-red font-sans transition-colors duration-200 mb-3">
                     <svg className="mr-3" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.25a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 18 6.25z"/></svg>
                     {stylist.instagram}
                   </a>
+                  )}
+                  {'phone' in stylist && stylist.phone && (
                   <a href={`tel:${stylist.phone}`} className="flex items-center justify-center text-dark-gray hover:text-primary-red font-sans transition-colors duration-200">
                     <svg className="mr-3" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h2.49a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.02l-2.2 2.2z"/></svg>
                     {stylist.title.includes('Owner') || stylist.title.includes('Nail') ? 'Mobile' : 'Phone'}: {stylist.phone}
                   </a>
+                  )}
                 </div>
+                )}
               </div>
             </FadeIn>
           ))}
