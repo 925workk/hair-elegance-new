@@ -37,7 +37,7 @@ export const SERVICES: SalonService[] = [
   { name: 'Partial Highlights', slug: makeSlug('partial highlights'), category: 'womens-color', priceFrom: '$100+' },
   { name: 'All Over Hair Color with Highlights', slug: makeSlug('all over hair color with highlights'), category: 'womens-color', priceFrom: '$195+' },
   { name: 'All Over Hair Color with Partial Highlights', slug: makeSlug('all over hair color with partial highlights'), category: 'womens-color', priceFrom: '$145+' },
-  { name: 'All Over Hair Color', slug: makeSlug('all over hair color'), category: 'womens-color', priceFrom: '$110+' },
+  { name: 'All Over Hair Color', slug: makeSlug('all over hair color'), category: 'womens-color', priceFrom: '$115+' },
   { name: 'All Over Hair Color with 7 Foils', slug: makeSlug('all over hair color with 7 foils'), category: 'womens-color', priceFrom: '$125+' },
   { name: '7 Foils with Style', slug: makeSlug('7 foils with style'), category: 'womens-color', priceFrom: '$70+' },
   { name: 'All Over Blonde Hair', slug: makeSlug('all over blonde hair'), category: 'womens-color', priceFrom: '$180+' },
@@ -67,9 +67,9 @@ export const SERVICES: SalonService[] = [
 
   // Men
   { name: "Men's Haircut", slug: makeSlug('mens haircut'), category: 'mens-haircuts-color', priceFrom: '$31+' },
-  { name: "Men's All Over Hair Color", slug: makeSlug('mens all over hair color'), category: 'mens-haircuts-color', priceFrom: '$50+' },
+  { name: "Men's All Over Hair Color", slug: makeSlug('mens all over hair color'), category: 'mens-haircuts-color', priceFrom: '$75+' },
   { name: "Men's All Over Blonde with Toner", slug: makeSlug('mens all over blonde with toner'), category: 'mens-haircuts-color', priceFrom: '$140+' },
-  { name: "Men's Highlights", slug: makeSlug('mens highlights'), category: 'mens-haircuts-color', priceFrom: '$70+' },
+  { name: "Men's Highlights", slug: makeSlug('mens highlights'), category: 'mens-haircuts-color', priceFrom: '$90+' },
 ];
 
 export const CATEGORY_LABELS: Record<ServiceCategory, string> = {
