@@ -26,7 +26,7 @@ const stylists = [
     name: 'Emery Nelson',
     title: 'Stylist',
     image: '/images/stylist-3.png',
-    bio: "Hi my name is Emery and I have been doing hair for two years now. I love being able to make someone feel beautiful! I really enjoy getting to know the client. There's no better feeling then bringing there vision to life. I'm so excited for the relationships I get to form. I can't wait to have you in my chair.",
+    bio: "Hi, my name is Emery and I have been a licensed stylist since 2022. I love being able to make someone feel beautiful! I really enjoy getting to know the client. There's no better feeling then bringing there vision to life. I'm so excited for the relationships I get to form. I can't wait to have you in my chair.",
     instagram: 'hair_by_emery',
     instagramLink: 'https://www.instagram.com/hair_by_emery',
     phone: '801-727-4247',
