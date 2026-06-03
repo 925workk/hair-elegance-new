@@ -52,7 +52,7 @@ export const SERVICES: SalonService[] = [
   { name: "Women's Haircut and Style", slug: makeSlug('womens haircut and style'), category: 'womens-haircuts-styling', priceFrom: '$51+' },
   { name: 'Dry Cut', slug: makeSlug('dry cut'), category: 'womens-haircuts-styling', priceFrom: '$41+' },
   { name: "Kid's Haircut", slug: makeSlug('kids haircut'), category: 'womens-haircuts-styling', priceFrom: '$36+' },
-  { name: 'Shampoo and Style', slug: makeSlug('shampoo and style'), category: 'womens-haircuts-styling', priceFrom: '$36+' },
+  { name: 'Shampoo and Style', slug: makeSlug('shampoo and style'), category: 'womens-haircuts-styling', priceFrom: '$40+' },
   { name: 'Brazilian Blowout', slug: makeSlug('brazilian blowout'), category: 'womens-haircuts-styling', priceFrom: '$265+' },
   { name: 'Olaplex Treatment', slug: makeSlug('olaplex treatment'), category: 'womens-haircuts-styling', priceFrom: '$45+' },
   { name: 'Deep Conditioner', slug: makeSlug('deep conditioner'), category: 'womens-haircuts-styling', priceFrom: '$30+' },
