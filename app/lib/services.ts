@@ -49,8 +49,8 @@ export const SERVICES: SalonService[] = [
   { name: 'Camo Color', slug: makeSlug('camo color'), category: 'womens-color', priceFrom: '$40+' },
 
   // Women's Haircuts & Styling
-  { name: "Women's Haircut and Style", slug: makeSlug('womens haircut and style'), category: 'womens-haircuts-styling', priceFrom: '$51+' },
-  { name: 'Dry Cut', slug: makeSlug('dry cut'), category: 'womens-haircuts-styling', priceFrom: '$41+' },
+  { name: "Women's Haircut and Style", slug: makeSlug('womens haircut and style'), category: 'womens-haircuts-styling', priceFrom: '$52+' },
+  { name: 'Dry Cut', slug: makeSlug('dry cut'), category: 'womens-haircuts-styling', priceFrom: '$42+' },
   { name: "Kid's Haircut", slug: makeSlug('kids haircut'), category: 'womens-haircuts-styling', priceFrom: '$36+' },
   { name: 'Shampoo and Style', slug: makeSlug('shampoo and style'), category: 'womens-haircuts-styling', priceFrom: '$40+' },
   { name: 'Brazilian Blowout', slug: makeSlug('brazilian blowout'), category: 'womens-haircuts-styling', priceFrom: '$265+' },
@@ -66,7 +66,7 @@ export const SERVICES: SalonService[] = [
   { name: 'Pedicure', slug: makeSlug('pedicure'), category: 'nails', priceFrom: '$45+' },
 
   // Men
-  { name: "Men's Haircut", slug: makeSlug('mens haircut'), category: 'mens-haircuts-color', priceFrom: '$31+' },
+  { name: "Men's Haircut", slug: makeSlug('mens haircut'), category: 'mens-haircuts-color', priceFrom: '$32+' },
   { name: "Men's All Over Hair Color", slug: makeSlug('mens all over hair color'), category: 'mens-haircuts-color', priceFrom: '$75+' },
   { name: "Men's All Over Blonde with Toner", slug: makeSlug('mens all over blonde with toner'), category: 'mens-haircuts-color', priceFrom: '$140+' },
   { name: "Men's Highlights", slug: makeSlug('mens highlights'), category: 'mens-haircuts-color', priceFrom: '$90+' },

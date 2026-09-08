@@ -57,6 +57,13 @@ const stylists = [
     instagram: 'shel.nic.does.hair',
     instagramLink: 'https://www.instagram.com/shel.nic.does.hair',
   },
+  {
+    name: 'Elaine',
+    title: 'Stylist',
+    image: '/images/stylist-7.png',
+    imagePosition: 'object-[center_20%]',
+    bio: "My name is Elaine. Currently, I am working at Hair Elegance at The District, South Jordan, Utah. For the past 7 years, I have been working as a hairstylist at Fantastic Sam's, West Jordan, Utah, providing expert color and cut services to all ages and genders. As a passionate hairstylist, I have now grown into extensive experience in haircutting and hair coloring, highlights, vibrant hair colors, balayage, ombre, and also basic and spiral hair perms. I enjoy welcoming every guest with care, love, and respect!",
+  },
 ];
 
 export default function StylistsPage() {
@@ -83,7 +90,7 @@ export default function StylistsPage() {
                       src={stylist.image}
                       alt={stylist.name}
                       fill
-                      className="rounded-full object-cover border-4 border-primary-red"
+                      className={`rounded-full object-cover border-4 border-primary-red ${'imagePosition' in stylist && stylist.imagePosition ? stylist.imagePosition : ''}`}
                     />
                   </div>
                 </div>
