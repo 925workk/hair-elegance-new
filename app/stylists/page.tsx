@@ -61,7 +61,7 @@ const stylists = [
     name: 'Elaine',
     title: 'Stylist',
     image: '/images/stylist-7.png',
-    imagePosition: 'object-[center_20%]',
+    imagePosition: 'scale-105',
     bio: "My name is Elaine. Currently, I am working at Hair Elegance at The District, South Jordan, Utah. For the past 7 years, I have been working as a hairstylist at Fantastic Sam's, West Jordan, Utah, providing expert color and cut services to all ages and genders. As a passionate hairstylist, I have now grown into extensive experience in haircutting and hair coloring, highlights, vibrant hair colors, balayage, ombre, and also basic and spiral hair perms. I enjoy welcoming every guest with care, love, and respect!",
   },
 ];
@@ -85,12 +85,13 @@ export default function StylistsPage() {
             <FadeIn key={stylist.name}>
               <div className="bg-white rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 p-8 flex flex-col text-center h-full">
                 <div className="mx-auto mb-6">
-                  <div className="relative w-48 h-48">
+                  <div className="relative w-48 h-48 overflow-hidden rounded-full border-4 border-primary-red">
                     <Image
                       src={stylist.image}
                       alt={stylist.name}
                       fill
-                      className={`rounded-full object-cover border-4 border-primary-red ${'imagePosition' in stylist && stylist.imagePosition ? stylist.imagePosition : ''}`}
+                      unoptimized
+                      className={`object-cover ${'imagePosition' in stylist && stylist.imagePosition ? stylist.imagePosition : ''}`}
                     />
                   </div>
                 </div>
