@@ -63,6 +63,7 @@ const stylists = [
     image: '/images/stylist-7.png',
     imagePosition: 'scale-105',
     bio: "My name is Elaine. Currently, I am working at Hair Elegance at The District, South Jordan, Utah. For the past 7 years, I have been working as a hairstylist at Fantastic Sam's, West Jordan, Utah, providing expert color and cut services to all ages and genders. As a passionate hairstylist, I have now grown into extensive experience in haircutting and hair coloring, highlights, vibrant hair colors, balayage, ombre, and also basic and spiral hair perms. I enjoy welcoming every guest with care, love, and respect!",
+    phone: '801-755-2034',
   },
 ];
 
