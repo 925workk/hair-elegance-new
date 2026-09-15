@@ -59,6 +59,26 @@ export const SERVICES: SalonService[] = [
   { name: 'Deep Conditioner w/Style', slug: makeSlug('deep conditioner with style'), category: 'womens-haircuts-styling', priceFrom: '$45+' },
   { name: 'Curl Set Refresh (No Shampoo)', slug: makeSlug('curl set refresh no shampoo'), category: 'womens-haircuts-styling', priceFrom: '$25+' },
   { name: 'Hair Extensions', slug: makeSlug('hair extensions consultation'), category: 'womens-haircuts-styling' },
+  { name: 'Brow Wax', slug: makeSlug('brow wax'), category: 'womens-haircuts-styling', priceFrom: '$20+', copy: {
+    intro: 'A precise brow wax to clean up shape and define your arches for a polished, natural look.',
+    sections: [
+      { heading: 'What it is', content: 'Warm wax removes unwanted hair around the brows to refine shape and create clean lines that flatter your face.' },
+      { heading: 'How we do it', content: 'We map your natural brow shape, then wax and tidy stray hairs for a balanced, symmetrical finish.' },
+    ],
+    faqs: [
+      { q: 'How often should I wax my brows?', a: 'Most guests return every 3–4 weeks as hair grows back.' },
+    ],
+  }},
+  { name: 'Lip Wax', slug: makeSlug('lip wax'), category: 'womens-haircuts-styling', priceFrom: '$10+', copy: {
+    intro: 'A quick lip wax that removes fine hair above the lip for a smooth, clean finish.',
+    sections: [
+      { heading: 'What it is', content: 'A small-area wax focused on the upper lip to clear unwanted hair with minimal downtime.' },
+      { heading: 'How we do it', content: 'We apply warm wax carefully to the lip line, then soothe the skin for a soft, finished look.' },
+    ],
+    faqs: [
+      { q: 'Does a lip wax hurt?', a: 'It is a quick service with brief discomfort. Skin may look slightly pink for a short time afterward.' },
+    ],
+  }},
 
   // Nails
   { name: 'Acrylic Nails Full Set', slug: makeSlug('acrylic nails full set'), category: 'nails', priceFrom: '$60+' },
@@ -184,6 +204,15 @@ const mensBase = (serviceName: string): ServiceCopy => ({
 
 // Targeted overrides for specific services to ensure uniqueness and accuracy
 export function getCopyForService(service: SalonService): ServiceCopy {
+  // Prefer a full custom copy block when provided on the service
+  if (service.copy?.intro && service.copy?.sections) {
+    return {
+      intro: service.copy.intro,
+      sections: service.copy.sections,
+      faqs: service.copy.faqs || [],
+    };
+  }
+
   const name = service.name;
   let base: ServiceCopy;
 
